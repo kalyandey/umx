@@ -1,0 +1,25 @@
+html,
+body {
+/*css for full size background image*/
+  background: url("../images/landing.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  text-align: center;
+}
+
+
+.land{
+  padding-top: 10%;
+}
+
+.logo{
+  height:65px;
+  padding-bottom:10px;
+}
+
+.nav{
+  height:75px;
+}
