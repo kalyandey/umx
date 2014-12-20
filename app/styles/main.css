@@ -16,10 +16,18 @@ body {
 }
 
 .logo{
-  height:65px;
-  padding-bottom:10px;
+  height:55px;
+  padding-bottom:20px;
+  
 }
 
 .nav{
   height:75px;
+}
+
+.white{
+  margin-top:15px;
+  background-color:#fff;
+  height:50px;
+  width:100%;
 }

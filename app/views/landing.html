@@ -20,17 +20,13 @@
               type="email">
             </div>
             <div class="col-md-8">
-              <!-- Need to add controller for modal -->
-              <!-- <a ui-sref=".terms">Terms And Conditions</a> -->
-              <div ng-controller="LandingCtrl">
-                  <div ng-show="terms">
-                      <p>{{terms}}</p>
-                  </div>
-                    
-                    
+              <!-- Need to add controller for modal --> 
+              <div ng-controller="Controller">      
+                  <a class="btn btn-default" href ng-click="show()">Terms Modal</a>
+                    <p>{{message}}</p>
               </div>
             </div>
-            <div class="col-md-4 col-md-">
+            <div class="col-md-4">
             <button type="submit" class="btn btn-default">Sign Up</button>
           </div>
           </form>
