@@ -23,7 +23,6 @@ var app = angular.module('umxFrontendApp', [
 
     $urlRouterProvider.otherwise('/landing');
 
-
     $stateProvider
       .state('landing', {
         url:'/landing',

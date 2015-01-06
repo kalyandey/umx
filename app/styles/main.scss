@@ -1,0 +1,236 @@
+html,
+body {
+  height: 100%;
+  text-align: center;
+  font-family: "aktiv-grotesk-std", sans-serif;
+}
+
+@import '../sass/variables';
+@import '../sass/mixins';
+@import '../sass/extends';
+
+h1 {
+  font-family: "museo-sans-rounded", sans-serif;
+  font-weight: 700;
+}
+
+.row {
+  max-width: 90%;
+}
+
+.mobile-hide {
+  display: none;
+}
+
+nav.top-bar {
+  background: #fff;
+  height: 4rem;
+  .toggle-topbar.menu-icon {
+    display: none;
+  }
+  .title-area {
+    float: left;
+  }
+  .name {
+    height: auto;
+  }
+  h1 {
+    .logo {
+      background: url("../images/UMX.svg") no-repeat;
+      width: 11rem;
+      height: 5rem;
+    }
+  }
+  .top-bar-section {
+    ul li {
+      background: transparent;
+    }
+    li:not(.has-form) {
+      a:not(.button) {
+        background: transparent;
+      }
+      &.create {
+        a:not(.button) {
+          @extend .button;
+          padding: 0 2rem;
+          margin: .8rem 0 0 1rem;
+          font-size: .8rem;
+          font-family: "aktiv-grotesk-std", sans-serif;
+        }
+      }
+    }
+  }
+}
+
+.landing-container {
+  height: calc(100% - 70px)
+}
+
+#splash {
+  background: url("../images/home.jpg") no-repeat center center fixed;
+  @include vendor-prefix(background-size, cover);
+  height: calc(100% - 2.8125rem);
+  h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .17);
+    margin-top: 2rem;
+  }
+  p {
+    color: #fff;
+    font-weight: 100;
+  }
+  img, object {
+    display: none;
+  }
+  input[type=email] {
+    background: rgba(255, 255, 255, .6);
+    border-radius: .4rem;
+    font-size: 1.3rem;
+    padding: 1.5rem 1.5rem 1.5rem 1rem;
+    font-weight: 100;
+    color: $umxLightOrange;
+    &::-webkit-input-placeholder {
+      color: $umxLightOrange;
+    }
+    &::-moz-placeholder {
+      color: $umxLightOrange;
+    }
+  }
+  .medium-8 {
+    display: none;
+  }
+  .medium-4 {
+    margin-top: 1rem;
+  }
+  .terms {
+    color: #fff;
+  }
+  button.button {
+    font-weight: 100;
+    width: 100%;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .mobile-hide {
+    display: block;
+  }
+  .row {
+    max-width: 80%;
+  }
+  nav.top-bar {
+    height: 4.5rem;
+    h1 .logo {
+      width: 12rem;
+    }
+
+    .top-bar-section {
+      li:not(.has-form) {
+        &.create {
+          a:not(.button) {
+            padding: 0 2rem;
+            margin: .8rem 0 0 1rem;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  #splash {
+    display:table;
+    width:100%;
+    .table-cell {
+      vertical-align:middle;
+      display:table-cell;
+    }
+    .medium-8, .medium-4 {
+      width: 100%;
+    }
+    h1 {
+      font-size: 2.75rem;
+      margin: 0 0 2rem;
+    }
+    img, object {
+      display: block;
+    }
+    .medium-8 {
+      display: block;
+    }
+    button.button {
+      width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .mobile-hide {
+    display: block;
+  }
+  .row {
+    max-width: 80%;
+  }
+  h1 {
+    font-size: 3.25rem;
+  }
+  .landing-container {
+    height: calc(100% - 125px);
+  }
+  nav.top-bar {
+    height: 7.8125rem;
+    h1 {
+      .logo {
+        width: 19rem;
+        height: 6.8125rem;
+        margin: .4rem 0 0 .4rem;
+      }
+    }
+    .top-bar-section {
+      li:not(.has-form) {
+        &.create {
+          a:not(.button) {
+            padding: .2rem 2.4rem;
+            margin: 2.3rem 0 0 1rem;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+  }
+
+  #splash {
+
+    .medium-8 {
+      display: block;
+    }
+    h1 {
+      margin: 6% 0;
+      font-size: 3.25rem;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    img, object {
+      display: block;
+    }
+    input[type=email] {
+      padding: 2.2rem;
+      font-size: 2rem;
+    }
+    button.button {
+      padding: 1rem 3rem;
+      font-size: 1.3rem;
+      width:auto;
+    }
+  }
+
+}

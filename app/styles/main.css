@@ -1,33 +1,203 @@
 html,
 body {
-/*css for full size background image*/
-  background: url("../images/landing.jpg") no-repeat center center fixed; 
+  height: 100%;
+  text-align: center;
+  font-family: "aktiv-grotesk-std", sans-serif; }
+
+.button, nav.top-bar .top-bar-section li:not(.has-form).create a:not(.button) {
+  color: #fff;
+  background: #fe7353;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #fe7353 0%, #fb532c 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fe7353), color-stop(100%, #fb532c));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fe7353 0%, #fb532c 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fe7353 0%, #fb532c 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fe7353 0%, #fb532c 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #fe7353 0%, #fb532c 100%);
+  /* W3C */
+  border-radius: 10px;
+  text-shadow: 0 1px 0 #bd2704;
+  -webkit-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  font-weight: 100; }
+  .button:hover, nav.top-bar .top-bar-section li:not(.has-form).create a:hover:not(.button) {
+    background: #fe5e3a;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #fe5e3a 0%, #ef3105 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fe5e3a), color-stop(100%, #ef3105));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fe5e3a 0%, #ef3105 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fe5e3a 0%, #ef3105 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fe5e3a 0%, #ef3105 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #fe5e3a 0%, #ef3105 100%);
+    /* W3C */ }
+
+h1 {
+  font-family: "museo-sans-rounded", sans-serif;
+  font-weight: 700; }
+
+.row {
+  max-width: 90%; }
+
+.mobile-hide {
+  display: none; }
+
+nav.top-bar {
+  background: #fff;
+  height: 4rem; }
+  nav.top-bar .toggle-topbar.menu-icon {
+    display: none; }
+  nav.top-bar .title-area {
+    float: left; }
+  nav.top-bar .name {
+    height: auto; }
+  nav.top-bar h1 .logo {
+    background: url("../images/UMX.svg") no-repeat;
+    width: 11rem;
+    height: 5rem; }
+  nav.top-bar .top-bar-section ul li {
+    background: transparent; }
+  nav.top-bar .top-bar-section li:not(.has-form) a:not(.button) {
+    background: transparent; }
+  nav.top-bar .top-bar-section li:not(.has-form).create a:not(.button) {
+    padding: 0 2rem;
+    margin: .8rem 0 0 1rem;
+    font-size: .8rem;
+    font-family: "aktiv-grotesk-std", sans-serif; }
+
+.landing-container {
+  height: calc(100% - 70px); }
+
+#splash {
+  background: url("../images/home.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
+  -ms-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;
-  text-align: center;
-}
+  height: calc(100% - 2.8125rem); }
+  #splash h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.17);
+    margin-top: 2rem; }
+  #splash p {
+    color: #fff;
+    font-weight: 100; }
+  #splash img, #splash object {
+    display: none; }
+  #splash input[type=email] {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: .4rem;
+    font-size: 1.3rem;
+    padding: 1.5rem 1.5rem 1.5rem 1rem;
+    font-weight: 100;
+    color: #fe7353; }
+    #splash input[type=email]::-webkit-input-placeholder {
+      color: #fe7353; }
+    #splash input[type=email]::-moz-placeholder {
+      color: #fe7353; }
+  #splash .medium-8 {
+    display: none; }
+  #splash .medium-4 {
+    margin-top: 1rem; }
+  #splash .terms {
+    color: #fff; }
+  #splash button.button {
+    font-weight: 100;
+    width: 100%; }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
 
-.land{
-  padding-top: 10%;
-}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .mobile-hide {
+    display: block; }
 
-.logo{
-  height:55px;
-  padding-bottom:20px;
-  
-}
+  .row {
+    max-width: 80%; }
 
-.nav{
-  height:75px;
-}
+  nav.top-bar {
+    height: 4.5rem; }
+    nav.top-bar h1 .logo {
+      width: 12rem; }
+    nav.top-bar .top-bar-section li:not(.has-form).create a:not(.button) {
+      padding: 0 2rem;
+      margin: .8rem 0 0 1rem;
+      font-size: 1rem; }
 
-.white{
-  margin-top:15px;
-  background-color:#fff;
-  height:50px;
-  width:100%;
-}
+  #splash {
+    display: table;
+    width: 100%; }
+    #splash .table-cell {
+      vertical-align: middle;
+      display: table-cell; }
+    #splash .medium-8, #splash .medium-4 {
+      width: 100%; }
+    #splash h1 {
+      font-size: 2.75rem;
+      margin: 0 0 2rem; }
+    #splash img, #splash object {
+      display: block; }
+    #splash .medium-8 {
+      display: block; }
+    #splash button.button {
+      width: auto; } }
+@media screen and (min-width: 1025px) {
+  .mobile-hide {
+    display: block; }
+
+  .row {
+    max-width: 80%; }
+
+  h1 {
+    font-size: 3.25rem; }
+
+  .landing-container {
+    height: calc(100% - 125px); }
+
+  nav.top-bar {
+    height: 7.8125rem; }
+    nav.top-bar h1 .logo {
+      width: 19rem;
+      height: 6.8125rem;
+      margin: .4rem 0 0 .4rem; }
+    nav.top-bar .top-bar-section li:not(.has-form).create a:not(.button) {
+      padding: .2rem 2.4rem;
+      margin: 2.3rem 0 0 1rem;
+      font-size: 1.2rem; }
+
+  #splash .medium-8 {
+    display: block; }
+  #splash h1 {
+    margin: 6% 0;
+    font-size: 3.25rem; }
+  #splash p {
+    font-size: 1.5rem;
+    line-height: 2rem; }
+  #splash img, #splash object {
+    display: block; }
+  #splash input[type=email] {
+    padding: 2.2rem;
+    font-size: 2rem; }
+  #splash button.button {
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    width: auto; } }
+
+/*# sourceMappingURL=main.css.map */
