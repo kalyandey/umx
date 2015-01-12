@@ -1,3 +1,32 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?kqp8uc');
+  src: url('../fonts/icomoon.eot?#iefixkqp8uc') format('embedded-opentype'),
+  url('../fonts/icomoon.woff?kqp8uc') format('woff'),
+  url('../fonts/icomoon.ttf?kqp8uc') format('truetype'),
+  url('../fonts/icomoon.svg?kqp8uc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mail:before {
+  content: "\e600";
+}
+
 html,
 body {
   height: 100%;
@@ -62,8 +91,42 @@ nav.top-bar {
   }
 }
 
+nav.landing {
+  ul{
+    margin-top:.3rem;
+  }
+  li {
+    display:inline;
+    width:30%;
+    margin-right:2rem;
+  }
+  input[type=email], input[type=password]{
+    font-size:1.5rem;
+    border:0;
+    padding:1.5rem 1.5rem 1.5rem 2.5rem;
+    border-bottom:1px solid $umxGrey;
+    box-shadow:none;
+    background:transparent;
+    color:$umxGrey;
+  }
+  input.button-sec{
+    display:inline;
+    font-size:1.1rem;
+    padding:.7rem 2rem;
+    height:auto;
+    cursor:pointer;
+  }
+  .right {
+    width:50%;
+    text-align:right;
+    padding-right:2rem;
+  }
+}
+
+
+
 .landing-container {
-  height: calc(100% - 70px)
+  height: calc(100% - 70px);
 }
 
 #splash {
@@ -83,20 +146,35 @@ nav.top-bar {
   img, object {
     display: none;
   }
-  input[type=email] {
-    background: rgba(255, 255, 255, .6);
-    border-radius: .4rem;
-    font-size: 1.3rem;
-    padding: 1.5rem 1.5rem 1.5rem 1rem;
-    font-weight: 100;
-    color: $umxLightOrange;
-    &::-webkit-input-placeholder {
+  .form-group {
+    position: relative;
+    i {
+      position: absolute;
+      font-size: 2rem;
       color: $umxLightOrange;
+      left: 1rem;
+      top: 1.5rem;
+      padding-right: .9rem;
+      border-right: 1px solid $umxLightOrange;
     }
-    &::-moz-placeholder {
+    input[type=email] {
+      background: rgba(255, 255, 255, .6);
+      border-radius: .4rem;
+      font-size: 2.1rem;
+      padding: 2.4rem 2.4rem 2.4rem 4.6rem;
+      font-weight: 100;
       color: $umxLightOrange;
+      box-shadow: none;
+
+      &::-webkit-input-placeholder {
+        color: $umxLightOrange;
+      }
+      &::-moz-placeholder {
+        color: $umxLightOrange;
+      }
     }
   }
+
   .medium-8 {
     display: none;
   }
@@ -117,6 +195,9 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  a {
+    color: $umxLightOrange;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -130,6 +211,7 @@ footer {
     height: 4.5rem;
     h1 .logo {
       width: 12rem;
+      height: 4.5rem;
     }
 
     .top-bar-section {
@@ -144,12 +226,19 @@ footer {
       }
     }
   }
+
+  nav.landing {
+    input.button-sec{
+      margin-top:.3rem;
+    }
+  }
+
   #splash {
-    display:table;
-    width:100%;
+    display: table;
+    width: 100%;
     .table-cell {
-      vertical-align:middle;
-      display:table-cell;
+      vertical-align: middle;
+      display: table-cell;
     }
     .medium-8, .medium-4 {
       width: 100%;
@@ -203,6 +292,12 @@ footer {
         }
       }
     }
+  }
+
+  nav.landing {
+    ul{
+      margin-top:1.8rem;
+    }
 
   }
 
@@ -216,7 +311,7 @@ footer {
       font-size: 3.25rem;
     }
     p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       line-height: 2rem;
     }
     img, object {
@@ -229,8 +324,27 @@ footer {
     button.button {
       padding: 1rem 3rem;
       font-size: 1.3rem;
-      width:auto;
+      width: auto;
     }
   }
 
+}
+
+@media screen and (min-width: 1600px) {
+  h1 {
+    font-size: 4.25rem;
+  }
+  #splash {
+    h1 {
+      font-size: 4.25rem;
+    }
+    p {
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+    button.button {
+      padding: 1.3rem 3.6rem;
+      font-size: 1.6rem;
+    }
+  }
 }

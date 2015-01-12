@@ -1,4 +1,5 @@
 <!-- Content -->
+<nav class="top-bar landing" data-topbar role="navigation" ng-include="'views/landing-nav.html'"></nav>
 <div id="splash" class="container">
   <div class="table-cell">
     <div class="row">
@@ -11,28 +12,27 @@
       <div class="medium-7 large-6 large-offset-1 columns">
         <img src="http://placehold.it/900x500/00000&text=video" class="img-responsive">
       </div>
-      <div class="medium-5 large-4 end  columns">
+      <div class="medium-5 large-4 end columns">
         <p class="text-left">All you need is a .edu email address to get started. Try it now!</p>
 
         <form role="form">
           <div class="form-group">
+            <i class="icon-mail"></i>
             <input class="form-control" id="exampleInputEmail1" placeholder="Email" type="email">
           </div>
           <div class="row mobile-hide">
-            <div class="medium-12 columns ">
+            <div class="medium-5 columns ">
               <!-- Need to add controller for modal -->
               <div class="text-left" ng-controller="Controller">
                 <a class="terms" href ng-click="show()">Terms and Conditions</a>
-
                 <p>{{message}}</p>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="medium-12 columns text-right">
+            <div class="medium-7 columns text-right">
               <button type="submit" class="button">Sign Up</button>
             </div>
           </div>
+
         </form>
       </div>
     </div>
