@@ -16,8 +16,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-mail:before {
+.icon-mail2:before {
   content: "\e600"; }
+
+.icon-lock:before {
+  content: "\e601"; }
 
 html,
 body {
@@ -95,9 +98,18 @@ nav.top-bar {
   background: #fff;
   height: 4rem; }
   nav.top-bar .toggle-topbar.menu-icon {
-    display: none; }
+    margin-right: 0; }
+    nav.top-bar .toggle-topbar.menu-icon a {
+      color: #8dc540; }
+      nav.top-bar .toggle-topbar.menu-icon a span:after {
+        box-shadow: 0 0 0 1px #8dc540, 0 7px 0 1px #8dc540, 0 14px 0 1px #8dc540; }
+  @media screen and (max-width: 47.9375em) {
+    nav.top-bar .toggle-topbar {
+      display: block; } }
   nav.top-bar .title-area {
-    float: left; }
+    float: left;
+    width: 100%;
+    height: 4em; }
   nav.top-bar .name {
     height: auto; }
   nav.top-bar h1 .logo {
@@ -135,7 +147,7 @@ nav.landing input.button-sec {
   height: auto;
   cursor: pointer; }
 nav.landing .right {
-  width: 50%;
+  width: 800px;
   text-align: right;
   padding-right: 2rem; }
 
@@ -167,14 +179,12 @@ nav.landing .right {
       font-size: 2rem;
       color: #fe7353;
       left: 1rem;
-      top: 1.5rem;
-      padding-right: .9rem;
-      border-right: 1px solid #fe7353; }
+      top: 1.5rem; }
     #splash .form-group input[type=email] {
       background: rgba(255, 255, 255, 0.6);
       border-radius: .4rem;
       font-size: 2.1rem;
-      padding: 2.4rem 2.4rem 2.4rem 4.6rem;
+      padding: 2.4rem 2.4rem 2.4rem 4rem;
       font-weight: 100;
       color: #fe7353;
       box-shadow: none; }
@@ -209,6 +219,8 @@ footer {
 
   nav.top-bar {
     height: 4.5rem; }
+    nav.top-bar .title-area {
+      width: auto; }
     nav.top-bar h1 .logo {
       width: 12rem;
       height: 4.5rem; }
@@ -252,6 +264,8 @@ footer {
 
   nav.top-bar {
     height: 7.8125rem; }
+    nav.top-bar .title-area {
+      width: auto; }
     nav.top-bar h1 .logo {
       width: 19rem;
       height: 6.8125rem;
@@ -261,6 +275,15 @@ footer {
       margin: 2.3rem 0 0 1rem;
       font-size: 1.2rem; }
 
+  nav.landing li {
+    width: 100%;
+    height: auto !important; }
+    nav.landing li i {
+      top: 22px;
+      left: 22px;
+      font-size: 1.4em;
+      color: #5d5d5d;
+      position: absolute; }
   nav.landing ul {
     margin-top: 1.8rem; }
 
