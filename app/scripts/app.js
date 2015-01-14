@@ -1,5 +1,5 @@
 'use strict';
-
+/*jshint unused: false, undef:false */
 /**
  * @ngdoc overview
  * @name umxFrontendApp
@@ -8,50 +8,47 @@
  *
  * Main module of the application.
  */
- /*global app:true*/
-var app = angular.module('umxFrontendApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngTouch',
-    'ui.router',
-    'angularModalService'
-  ]);
+/*global app:true*/
+angular.module('umxFrontendApp', [
+  'ngAnimate',
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngTouch',
+  'ui.router',
+  'mm.foundation'
+])
 
-  app.config(function ($stateProvider, $urlRouterProvider) {
-
-    $urlRouterProvider.otherwise('/landing');
-
+  .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('landing', {
-        url:'/landing',
-        templateUrl: 'views/landing.html'
-     })
+        url: '/landing',
+        templateUrl: '../views/landing.html'
+      })
       .state('dashboard', {
-        url:'/dashboard',
-        templateUrl: 'views/dashboard.html'
+        url: '/dashboard',
+        templateUrl: '../views/dashboard.html'
       });
+    $urlRouterProvider.otherwise('/landing');
+  })
+
+
+  .controller('LandingController', function ($scope, $modal) {
+
+    $scope.openModal = function () {
+      $modal.open({
+        templateUrl: 'TermsModal.html',
+        controller: 'ModalCtrl'
+      });
+    };
+
+  })
+
+
+  .controller('ModalCtrl', function ($scope, $modalInstance) {
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
 
   });
-
-app.controller('Controller', function($scope, ModalService){
-
-  $scope.show = function(){
-    ModalService.showModal({
-      templateUrl: 'views/terms.html',
-      controller: 'ModalCtrl'
-    }).then(function(modal){
-      modal.element.modal();
-      modal.close.then(function(result){
-        $scope.message = 'test' + result;
-      });
-    });
-  };
-});
-
-app.controller('ModalCtrl', function($scope, close){
-  $scope.close = function(result){
-    close(result,500);
-  };
-});

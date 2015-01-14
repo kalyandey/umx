@@ -70,7 +70,7 @@ nav.top-bar {
 
   @media screen and (max-width: 47.9375em) {
     .toggle-topbar {
-      display:block;
+      display: block;
     }
   }
   .title-area {
@@ -89,6 +89,7 @@ nav.top-bar {
     }
   }
   .top-bar-section {
+    display: none;
     ul li {
       background: transparent;
 
@@ -120,9 +121,7 @@ nav.landing {
     margin-right: 2rem;
   }
   input[type=email], input[type=password] {
-    font-size: 1.5rem;
     border: 0;
-    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
     border-bottom: 1px solid $umxGrey;
     box-shadow: none;
     background: transparent;
@@ -130,20 +129,13 @@ nav.landing {
   }
   input.button-sec {
     display: inline;
-    font-size: 1.1rem;
-    padding: .7rem 2rem;
     height: auto;
     cursor: pointer;
-  }
-  .right {
-    width: 800px;
-    text-align: right;
-    padding-right: 2rem;
   }
 }
 
 .landing-container {
-  height: calc(100% - 70px);
+  height: calc(100% - 20px);
 }
 
 #splash {
@@ -167,16 +159,16 @@ nav.landing {
     position: relative;
     i {
       position: absolute;
-      font-size: 2rem;
+      font-size: 1.4rem;
       color: $umxLightOrange;
       left: 1rem;
-      top: 1.5rem;
+      top: .75rem;
     }
     input[type=email] {
       background: rgba(255, 255, 255, .6);
       border-radius: .4rem;
-      font-size: 2.1rem;
-      padding: 2.4rem 2.4rem 2.4rem 4rem;
+      font-size: 1.4rem;
+      padding: 1.4rem 1.4rem 1.4rem 3.2rem;
       font-weight: 100;
       color: $umxLightOrange;
       box-shadow: none;
@@ -202,6 +194,7 @@ nav.landing {
   button.button {
     font-weight: 100;
     width: 100%;
+    padding: .7rem 0;
   }
 }
 
@@ -210,17 +203,28 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  display: none;
   a {
     color: $umxLightOrange;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 47.99em) {
+  .columns {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 48em) {
   .mobile-hide {
     display: block;
   }
   .row {
     max-width: 80%;
+  }
+
+  .landing-container {
+    height: calc(100% - 70px);
   }
   nav.top-bar {
     height: 4.5rem;
@@ -234,6 +238,7 @@ footer {
     }
 
     .top-bar-section {
+      display: block;
       li:not(.has-form) {
         &.create {
           a:not(.button) {
@@ -248,7 +253,28 @@ footer {
 
   nav.landing {
     input.button-sec {
-      margin-top: .3rem;
+      margin-top: .2rem;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+    }
+    .right {
+      width: 570px;
+      li {
+        width: 100%;
+        float: right;
+        i {
+          top: 22px;
+          left: 22px;
+          font-size: 1.2em;
+          color: $umxGrey;
+          position: absolute;
+        }
+        input[type=email], input[type=password] {
+          font-size: 1.1rem;
+          padding: 1.1rem 1.5rem 1.1rem 2.3rem;
+          margin-top: 5px;
+        }
+      }
     }
   }
 
@@ -274,11 +300,16 @@ footer {
     }
     button.button {
       width: auto;
+      padding: 1rem 1rem;
+      font-size: 1rem;
     }
+  }
+  footer {
+    display: block;
   }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 75em) {
   .mobile-hide {
     display: block;
   }
@@ -305,7 +336,6 @@ footer {
       }
     }
     .top-bar-section {
-
       li:not(.has-form) {
         &.create {
           a:not(.button) {
@@ -319,20 +349,29 @@ footer {
   }
 
   nav.landing {
-    li {
-      width: 100%;
-      height: auto !important;
-      i {
-        top: 22px;
-        left: 22px;
-        font-size: 1.4em;
-        color: $umxGrey;
-        position: absolute;
-      }
+    input.button-sec {
+      font-size: 1.1rem;
+      padding: .7rem 2rem;
     }
 
-    ul {
+    .right {
+      width: 800px;
+      text-align: right;
+      padding-right: 2rem;
       margin-top: 1.8rem;
+      li {
+        width: 100%;
+        height: auto !important;
+        i {
+          font-size: 1.4rem;
+          left: 1rem;
+          top: 1.6rem;
+        }
+        input[type=email], input[type=password] {
+          font-size: 1.5rem;
+          padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+        }
+      }
     }
 
   }
@@ -343,7 +382,7 @@ footer {
       display: block;
     }
     h1 {
-      margin: 6% 0;
+      margin: 0 0 6%;
       font-size: 3.25rem;
     }
     p {
@@ -359,17 +398,28 @@ footer {
     }
     button.button {
       padding: 1rem 3rem;
-      font-size: 1.3rem;
+      font-size: 1rem;
       width: auto;
     }
   }
 
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 100em) {
   h1 {
     font-size: 4.25rem;
   }
+
+  nav.landing {
+    padding-right:0;
+    li {
+      margin-right: 0;
+    }
+    .right {
+      width: 1000px;
+    }
+  }
+
   #splash {
     h1 {
       font-size: 4.25rem;
@@ -379,8 +429,18 @@ footer {
       line-height: 2.4rem;
     }
     button.button {
-      padding: 1.3rem 3.6rem;
-      font-size: 1.6rem;
+      padding: 1.3rem 2.6rem;
+      font-size: 1.4rem;
+    }
+    .form-group {
+      i {
+        font-size: 1.8rem;
+        top: 1.2rem;
+      }
+      input[type=email] {
+        font-size: 2.1rem;
+        padding: 2rem 1.4rem 2rem 3.9rem;
+      }
     }
   }
 }
