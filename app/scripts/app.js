@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 /*global app:true*/
-angular.module('umxFrontendApp', [
+var app = angular.module('umxFrontendApp', [
   'ngAnimate',
   'ngCookies',
   'ngResource',
@@ -43,6 +43,8 @@ angular.module('umxFrontendApp', [
     };
 
   })
+
+ 
 
 
   .controller('ModalCtrl', function ($scope, $modalInstance) {
