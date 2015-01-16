@@ -2,7 +2,28 @@
 <!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+	 viewBox="0 307 612 198" enable-background="new 0 307 612 198" xml:space="preserve">
+	 	    <style>
+        svg * {
+            transition: fill 1s ease-out, opacity .1s ease-out;
+        }
+	
+        @media screen and (max-width: 200px) {
+            #UMX-Text { 
+                opacity: 0; 
+            }
+            
+        }
+        @media screen and (max-width: 180px) {
+		svg{
+		margin-left:-35px
+		}
+            #triangle {
+                opacity: 0;
+				
+            }
+        }
+    </style>
 <g id="UMX">
 	<g enable-background="new    ">
 		<path fill="#8EC641" d="M171.2,347c0-5.8,3.2-9,9-9h9.2c6,0,9,3.2,9,9v55.5c0,13.2,3.4,22.2,16.9,22.2c19.6,0,30.5-17.3,30.5-36.7

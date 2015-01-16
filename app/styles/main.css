@@ -115,7 +115,8 @@ nav.top-bar {
   nav.top-bar h1 .logo {
     background: url("../images/UMX.svg") no-repeat;
     width: 11rem;
-    height: 5rem; }
+    height: 5rem;
+    margin-top: .5rem; }
   nav.top-bar .top-bar-section {
     display: none; }
     nav.top-bar .top-bar-section ul li {
@@ -225,7 +226,8 @@ footer {
       width: auto; }
     nav.top-bar h1 .logo {
       width: 12rem;
-      height: 4.5rem; }
+      height: 4.5rem;
+      margin-top: .6rem; }
     nav.top-bar .top-bar-section {
       display: block; }
       nav.top-bar .top-bar-section li:not(.has-form).create a:not(.button) {
@@ -295,7 +297,7 @@ footer {
     nav.top-bar h1 .logo {
       width: 16rem;
       height: 6.8125rem;
-      margin: -.4rem 0 0 .4rem; }
+      margin: .4rem 0 0 .4rem; }
     nav.top-bar .top-bar-section li:not(.has-form).create a:not(.button) {
       padding: .2rem 2.4rem;
       margin: 2.3rem 0 0 1rem;
