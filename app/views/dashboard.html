@@ -1,162 +1,19 @@
-<br>
-<br>
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+<nav class="top-bar" data-topbar role="navigation" ng-include="'views/dashboard-nav.html'"></nav>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Books</a></li>
-            <li class="divider"></li>
-            <li><a href="#">School Supplies</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Electronics</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Clothing</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Furniture</a></li>
-            <li><a href="#">Sports & Outdoor</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Automotive</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Beauty/Health & Fitness</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Party Supplies & Crafts</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  <div ng-controller="ItemController as umxFrontendApp">
+    <div class="row">
+      <div ng-repeat="product in umxFrontendApp.products">
+         <div class="small-2 columns">
+          <img ng-src="{{product.images[0].full}}"/>
+            <small>{{product.name}}</small><br>
+            <em class="push-right">{{product.price | currency}}</em><br>
 
-<!--End Navigation-->
-
- <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-        <div class="col-md-2">
-          <img src="http://placehold.it/200x200" class="img-responsive">
-          <h6>Perspectives in Medical Sociology</h6>
-          <p>
-            <small>Author: Phil Brown
-              <br>ISBN: 9781577665182 Seller: Mike Sellers</small>
-          </p>
-          <h3>$19.99</h3>
-          <p></p>
-        </div>
-    </div>
+            <small>Seller:{{product.seller}}</small><br>
+            <small>Condition:{{product.condition}}</small>
+            <small>Description:{{product.description}}</small>
+            <button ng-show="product.available">Button</button>
+        </div>  
+     </div>  
+   </div>
+  </div>
+</div>
