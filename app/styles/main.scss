@@ -323,16 +323,16 @@ footer {
     height: calc(100% - 125px);
   }
   nav.top-bar {
-    height: 7.8125rem;
+    height: 5.8125rem;
     .title-area {
       width: auto;
     }
 
     h1 {
       .logo {
-        width: 19rem;
+        width: 16rem;
         height: 6.8125rem;
-        margin: .4rem 0 0 .4rem;
+        margin: -.4rem 0 0 .4rem;
       }
     }
     .top-bar-section {
@@ -358,7 +358,7 @@ footer {
       width: 800px;
       text-align: right;
       padding-right: 2rem;
-      margin-top: 1.8rem;
+      margin-top: .8rem;
       li {
         width: 100%;
         height: auto !important;
