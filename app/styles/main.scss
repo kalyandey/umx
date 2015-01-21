@@ -31,16 +31,40 @@
   content: "\e601";
 }
 
+@import '../sass/variables';
+@import '../sass/mixins';
+@import '../sass/extends';
+@import '../../bower_components/animate-sass/animate';
+
 html,
 body {
   height: 100%;
   text-align: center;
   font-family: "aktiv-grotesk-std", sans-serif;
+  @include simpleTransition(.3s all ease-in-out);
 }
 
-@import '../sass/variables';
-@import '../sass/mixins';
-@import '../sass/extends';
+body {
+  -webkit-backface-visibility: hidden; // Addresses a small issue in webkit: http://bit.ly/NEdoDq
+}
+
+.animated {
+  @include animate-prefixer(animation-duration, $base-duration);
+  @include animate-prefixer(animation-fill-mode, both);
+
+  &.hinge {
+    @include animate-prefixer(animation-duration, $base-duration * 2);
+  }
+}
+
+.mobile-hide {
+  display: none;
+  display: none;
+}
+
+.mobile-show {
+  display: block;
+}
 
 h1 {
   font-family: "museo-sans-rounded", sans-serif;
@@ -51,15 +75,44 @@ h1 {
   max-width: 90%;
 }
 
-.mobile-hide {
-  display: none;
+.landing-container {
+  height: calc(100% - 20px);
+  .wrapper {
+    height: 100%;
+  }
 }
 
-nav.top-bar {
+header.landing {
   background: #fff;
   height: 4rem;
-  .toggle-topbar.menu-icon {
+
+  ul {
+    float: left;
+    width: 100%;
+    height: 4em;
+    margin: 0;
+    li {
+      list-style-type: none;
+    }
+    .name {
+      height: auto;
+    }
+    h1 {
+      .logo {
+        background: url("../images/UMX.svg") no-repeat;
+        width: 11rem;
+        height: 5rem;
+        margin-top: .5rem;
+        display: block;
+      }
+    }
+  }
+
+  .menu-icon {
     margin-right: 0;
+    position: absolute;
+    top: 20px;
+    right: 24px;
     a {
       color: $umxMainGreen;
       span:after {
@@ -69,74 +122,118 @@ nav.top-bar {
   }
 
   @media screen and (max-width: 47.9375em) {
-    .toggle-topbar {
+    .menu-icon {
       display: block;
     }
   }
-  .title-area {
-    float: left;
-    width: 100%;
-    height: 4em;
-  }
-  .name {
-    height: auto;
-  }
-  h1 {
-    .logo {
-      background: url("../images/UMX.svg") no-repeat;
-      width: 11rem;
-      height: 5rem;
-      margin-top:.5rem;
-    }
-  }
-  .top-bar-section {
-    display: none;
-    ul li {
-      background: transparent;
 
-    }
-    li:not(.has-form) {
-      a:not(.button) {
-        background: transparent;
-      }
-      &.create {
-        a:not(.button) {
-          @extend .button;
-          padding: 0 2rem;
-          margin: .8rem 0 0 1rem;
-          font-size: .8rem;
-          font-family: "aktiv-grotesk-std", sans-serif;
-        }
-      }
-    }
-  }
 }
 
 nav.landing {
-  ul {
-    margin-top: .3rem;
-  }
-  li {
-    display: inline;
-    width: 30%;
-    margin-right: 2rem;
-  }
-  input[type=email], input[type=password] {
-    border: 0;
-    border-bottom: 1px solid $umxGrey;
-    box-shadow: none;
-    background: transparent;
-    color: $umxGrey;
-  }
-  input.button-sec {
-    display: inline;
-    height: auto;
-    cursor: pointer;
-  }
-}
+  position: absolute;
+  background: $umxGrey;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  overflow:hidden;
 
-.landing-container {
-  height: calc(100% - 20px);
+  &.out {
+    @include simpleTransform(translateX(-100%));
+  }
+  .logo {
+    background: url("../images/UMX-mnav.svg") no-repeat;
+    width: 14rem;
+    height: 7rem;
+    margin-top: .5rem;
+    display: block;
+    position:absolute;
+    left:50%;
+    margin-left:-7rem;
+    + div {
+      margin-top:12rem;
+    }
+  }
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    .logo {
+      margin-top:3.5rem;
+    }
+  }
+  ul {
+    margin: 5rem 0 0 0;
+    li {
+      display: inline;
+      width: 30%;
+      margin: 0;
+      .row {
+        max-width: 100%;
+        position:absolute;
+        top:44%;
+        @include simpleTransform(translateY(-50%));
+      }
+      .close {
+        position: absolute;
+        top: 1rem;
+        right: 1.8rem;
+        font-weight: bold;
+        font-size: 2rem;
+        cursor: pointer;
+        color:#fff;
+        z-index:100;
+      }
+    }
+    i{
+      position:absolute;
+      top:.6rem;
+      left:1rem;
+      color:#fff;
+    }
+    input[type=email], input[type=password] {
+      border: 0;
+      border-bottom: 1px solid #fff;
+      box-shadow: none;
+      background: transparent;
+      color: white;
+      padding-left:1.8rem;
+      font-weight:100;
+      &::-webkit-input-placeholder {
+        color: white;
+      }
+      &::-moz-placeholder {
+        color: white;
+      }
+    }
+
+    input.button-sec {
+      @extend .button;
+      padding: .5rem 2rem;
+      width:100%;
+      margin: 1rem 0 0 0;
+      font-size: 1.1rem;
+      font-family: "aktiv-grotesk-std", sans-serif;
+      display: inline;
+      height: auto;
+      cursor: pointer;
+    }
+    .forgot {
+      color:#fff;
+      font-size:.7rem;
+      margin-top:1rem;
+      font-weight:100;
+      display:block;
+    }
+    footer {
+      display:block;
+      font-weight:100;
+      font-size:.7em;
+      padding-bottom:10px;
+      color:#fff;
+    }
+  }
 }
 
 #splash {
@@ -167,8 +264,8 @@ nav.landing {
     }
     input[type=email] {
       background: rgba(255, 255, 255, .6);
-      border-radius: .4rem;
-      font-size: 1.4rem;
+      border-radius: .2rem;
+      font-size: 1.2rem;
       padding: 1.4rem 1.4rem 1.4rem 3.2rem;
       font-weight: 100;
       color: $umxLightOrange;
@@ -191,11 +288,15 @@ nav.landing {
   }
   .terms {
     color: #fff;
+    font-size:.8rem;
+    line-height:1.1rem;
+    display:block;
   }
   button.button {
-    font-weight: 100;
+    font-weight: 300;
     width: 100%;
     padding: .7rem 0;
+    margin-top: 1rem;
   }
 }
 
@@ -220,6 +321,9 @@ footer {
   .mobile-hide {
     display: block;
   }
+  .mobile-show {
+    display: none !important;
+  }
   .row {
     max-width: 80%;
   }
@@ -227,55 +331,78 @@ footer {
   .landing-container {
     height: calc(100% - 70px);
   }
-  nav.top-bar {
-    height: 4.5rem;
-    .title-area {
+  header.landing {
+    height: 4rem;
+    float: left;
+    ul {
       width: auto;
-    }
-
-    h1 .logo {
-      width: 12rem;
-      height: 4.5rem;
-      margin-top:.6rem;
-    }
-
-    .top-bar-section {
-      display: block;
-      li:not(.has-form) {
-        &.create {
-          a:not(.button) {
-            padding: 0 2rem;
-            margin: .8rem 0 0 1rem;
-            font-size: 1rem;
-          }
-        }
+      h1 .logo {
+        width: 12rem;
+        height: 4.5rem;
+        margin-top: .6rem;
       }
     }
   }
 
   nav.landing {
-    input.button-sec {
-      margin-top: .2rem;
-      padding: .5rem 1rem;
-      font-size: 1rem;
+    float: right;
+    position:relative;
+    width:auto;
+    background:transparent;
+    height:auto;
+    &.out {
+      @include simpleTransform(none);
+      animation:none;
     }
-    .right {
-      width: 570px;
+    .logo + div {
+      margin-top:0;
+    }
+    ul {
+      position: relative;
+      @include simpleTransform(translateX(0));
+      width: 550px;
+      display: block;
+      margin-top: .8em;
+      margin-right:1rem;
       li {
         width: 100%;
         float: right;
+        .row {
+          max-width: 100%;
+          position:relative;
+          top:auto;
+          @include simpleTransform(none);
+        }
         i {
-          top: 22px;
-          left: 22px;
+          top: .9rem;
+          left: 1rem;
           font-size: 1.2em;
           color: $umxGrey;
           position: absolute;
         }
         input[type=email], input[type=password] {
           font-size: 1.1rem;
-          padding: 1.1rem 1.5rem 1.1rem 2.3rem;
+          padding: .3rem 0 .3rem 2rem;
           margin-top: 5px;
+          color:$umxGrey;
+          border-color:$umxGrey;
+          &::-webkit-input-placeholder {
+            color: $umxGrey;
+          }
+          &::-moz-placeholder {
+            color: $umxGrey;
+          }
         }
+
+        input.button-sec {
+          margin-top: .2rem;
+          padding: .5rem 1rem;
+          font-size: 1rem;
+          width:auto;
+        }
+      }
+      .forgot{
+        display:none;
       }
     }
   }
@@ -304,6 +431,7 @@ footer {
       width: auto;
       padding: 1rem 1rem;
       font-size: 1rem;
+      margin-top:0;
     }
   }
   footer {
@@ -322,74 +450,74 @@ footer {
     font-size: 3.25rem;
   }
   .landing-container {
-    height: calc(100% - 125px);
+    height: calc(100% - 95px);
   }
-  nav.top-bar {
-    height: 5.8125rem;
-    .title-area {
+  header.landing {
+    height: 5.8rem;
+    ul {
       width: auto;
-    }
-
-    h1 {
-      .logo {
-        width: 16rem;
-        height: 6.8125rem;
-        margin: .4rem 0 0 .4rem;
+      h1 {
+        .logo {
+          width: 16rem;
+          height: 6.8125rem;
+          margin: .4rem 0 0 .4rem;
+        }
       }
     }
-    .top-bar-section {
-      li:not(.has-form) {
-        &.create {
-          a:not(.button) {
-            padding: .2rem 2.4rem;
-            margin: 2.3rem 0 0 1rem;
-            font-size: 1.2rem;
-          }
+  }
+  nav.landing {
+    height: 5.8125rem;
+    ul {
+      margin-right:0;
+      li {
+        a:not(.button) {
+          padding: .2rem 2.4rem;
+          margin: 2.3rem 0 0 1rem;
+          font-size: 1.2rem;
+        }
+        input.button-sec {
+          font-size: 1.1rem;
+          padding: .7rem 2rem;
         }
       }
     }
   }
 
   nav.landing {
-    input.button-sec {
-      font-size: 1.1rem;
-      padding: .7rem 2rem;
-    }
 
-    .right {
-      width: 800px;
+    ul {
+      width: 880px;
       text-align: right;
-      padding-right: 2rem;
-      margin-top: .8rem;
+      padding-right: 0rem;
+      margin-top: 1.3rem;
       li {
         width: 100%;
         height: auto !important;
+
         i {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           left: 1rem;
-          top: 1.6rem;
+          top: 1rem;
         }
         input[type=email], input[type=password] {
-          font-size: 1.5rem;
-          padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+          font-size: 1rem;
+          padding: 1.2rem 0 1.2rem 2rem;
         }
       }
     }
-
   }
 
   #splash {
-
     .medium-8 {
       display: block;
     }
     h1 {
-      margin: 0 0 6%;
+      margin: 0 0 4%;
       font-size: 3.25rem;
     }
     p {
-      font-size: 1.6rem;
-      line-height: 2rem;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
     }
     img, object {
       display: block;
@@ -408,12 +536,8 @@ footer {
 }
 
 @media screen and (min-width: 100em) {
-  h1 {
-    font-size: 4.25rem;
-  }
-
   nav.landing {
-    padding-right:0;
+    padding-right: 0;
     li {
       margin-right: 0;
     }

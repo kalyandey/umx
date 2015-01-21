@@ -16,7 +16,8 @@ var app = angular.module('umxFrontendApp', [
   'ngSanitize',
   'ngTouch',
   'ui.router',
-  'mm.foundation'
+  'mm.foundation',
+  'matchmedia-ng'
 ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -35,6 +36,16 @@ var app = angular.module('umxFrontendApp', [
 
   .controller('LandingController', function ($scope, $modal) {
 
+    $scope.mobileViewClass = 'out';
+
+    $scope.openMobileNav = function () {
+      $scope.mobileViewClass = 'bounceInLeft';
+    };
+
+    $scope.closeMobileNav = function () {
+      $scope.mobileViewClass = 'out bounceOutLeft';
+    };
+
     $scope.openModal = function () {
       $modal.open({
         templateUrl: 'TermsModal.html',
@@ -43,8 +54,6 @@ var app = angular.module('umxFrontendApp', [
     };
 
   })
-
- 
 
 
   .controller('ModalCtrl', function ($scope, $modalInstance) {

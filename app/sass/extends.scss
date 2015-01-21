@@ -1,22 +1,23 @@
 .button {
   color: #fff;
-  @include button-background-color($umxLightOrange, $umxOrange);
-  border-radius: 10px;
+  background:$umxLightOrange;
+  border-radius: .2rem;
   text-shadow: 0 1px 0 darken($umxOrange, 20%);
   @include simpleTransition(.3s all ease-in-out);
   font-weight: 100;
   &:hover {
-    @include button-background-color(darken($umxLightOrange, 5%), darken($umxOrange, 10%));
+    background:$umxOrange;
   }
 }
 
 .button-sec {
   color: $umxLightOrange;
   border: 1px solid $umxLightOrange;
-  border-radius: 10px !important;
+  border-radius: .2rem !important;
   @include simpleTransition(.3s all ease-in-out);
   background:transparent;
   font-weight: 100;
+
   outline:0 !important;
   &:hover {
     color: #fff;

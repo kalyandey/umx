@@ -1,14 +1,22 @@
-<!-- Navbar -->
-<ul class="title-area">
-  <li class="name">
-    <h1><a class="logo" title="UMX - University Market Exchange" href="#"></a></h1>
+<ul>
+  <li>
+    <span ng-click="closeMobileNav()" class="close mobile-show">X</span>
+    <div class="row">
+      <a class="logo mobile-show" title="UMX - University Market Exchange" href="#"></a>
+
+      <div class="medium-5 columns">
+        <i class="icon-mail2"></i>
+        <input type="email" placeholder="Email" class="form-control">
+      </div>
+      <div class="medium-5 columns">
+        <i class="icon-lock"></i>
+        <input type="password" placeholder="Password" class="form-control">
+      </div>
+      <div class="medium-2 columns">
+        <input type="submit" value="Sign In" class="button-sec">
+        <a href="#" class="forgot">Forgot your Password?</a>
+      </div>
+    </div>
+    <footer class="nav-footer mobile-show">University Market Exchange &copy; 2015</footer>
   </li>
-  <li ng-click="" class="toggle-topbar menu-icon"><a><span>Login</span></a></li>
-</ul>
-<section class="top-bar-section">
-  <ul class="right" ng-include="'views/login.html'"></ul>
-</section>
-<!-- Navbar End -->
-
-
-
+  </ul>

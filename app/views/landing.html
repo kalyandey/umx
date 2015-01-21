@@ -1,6 +1,7 @@
-<!-- Content -->
-<nav class="top-bar landing" data-topbar role="navigation" ng-include="'views/landing-nav.html'"></nav>
-<div ng-controller="LandingController" id="splash" class="container">
+<div class="wrapper" ng-controller="LandingController">
+<header  class="landing" ng-include="'views/landing-header.html'"></header>
+<nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'views/landing-nav.html'"></nav>
+<div id="splash" class="container">
   <div class="table-cell">
     <div class="row">
       <div class="col-md-12">
@@ -35,4 +36,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

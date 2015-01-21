@@ -1,4 +1,6 @@
 'use strict';
+/*jshint unused: false, undef:false */
+var items;
 
 app.controller('ItemController', function(){
 	this.products = items;
@@ -20,7 +22,7 @@ var items = [
 
 	],
 	available: true,
-	sold: false,
+	sold: false
 },
 {
    name: 'test',
@@ -36,7 +38,7 @@ var items = [
 
 	],
 	available: true,
-	sold: false,
+	sold: false
 },
 {
    name: 'test',
@@ -52,7 +54,7 @@ var items = [
 
 	],
 	available: true,
-	sold: false,
+	sold: false
 },
 {
    name: 'test',
@@ -68,7 +70,7 @@ var items = [
 
 	],
 	available: true,
-	sold: false,
+	sold: false
 },
 {
    name: 'test',
@@ -84,7 +86,7 @@ var items = [
 
 	],
 	available: true,
-	sold: false,
+	sold: false
 },
 {
    name: 'test',
@@ -100,6 +102,6 @@ var items = [
 
 	],
 	available: true,
-	sold: false,
+	sold: false
 }
 ];

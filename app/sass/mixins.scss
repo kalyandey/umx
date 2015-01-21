@@ -19,3 +19,7 @@
 @mixin simpleTransition($transition) {
   @include vendor-prefix(transition, $transition);
 }
+
+@mixin simpleTransform($transform) {
+  @include vendor-prefix(transform, $transform);
+}
