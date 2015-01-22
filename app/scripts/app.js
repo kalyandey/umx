@@ -31,20 +31,37 @@ var app = angular.module('umxFrontendApp', [
         templateUrl: '../views/dashboard.html'
       });
     $urlRouterProvider.otherwise('/landing');
+
   })
 
 
-  .controller('LandingController', function ($scope, $modal) {
+  .controller('LandingController', function ($scope, $modal, matchmedia) {
 
-    $scope.mobileViewClass = 'out';
+    matchmedia.onPhone(function (mediaQueryList) {
+      $scope.phone = matchmedia.isPhone();
+      if ($scope.phone) {
+        $scope.mobileViewClass = 'out';
+        $scope.signIn = function () {
+          $scope.mobileViewClass = 'bounceInDown';
+        };
+        $scope.closeSignIn = function () {
+          $scope.mobileViewClass = 'out bounceOutUp';
+        };
+      }
+    });
 
-    $scope.openMobileNav = function () {
-      $scope.mobileViewClass = 'bounceInLeft';
-    };
-
-    $scope.closeMobileNav = function () {
-      $scope.mobileViewClass = 'out bounceOutLeft';
-    };
+    matchmedia.onDesktop(function (mediaQueryList) {
+      $scope.desktop = matchmedia.isDesktop();
+      $scope.tablet = matchmedia.isTablet();
+      if ($scope.desktop || $scope.tablet) {
+        $scope.signIn = function () {
+          $scope.signInToggle = 'expanded';
+        };
+        $scope.closeSignIn = function () {
+          $scope.signInToggle = '';
+        };
+      }
+    });
 
     $scope.openModal = function () {
       $modal.open({
@@ -57,9 +74,7 @@ var app = angular.module('umxFrontendApp', [
 
 
   .controller('ModalCtrl', function ($scope, $modalInstance) {
-
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
     };
-
   });

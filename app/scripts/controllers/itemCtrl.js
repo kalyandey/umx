@@ -6,7 +6,7 @@ app.controller('ItemController', function(){
 	this.products = items;
 });
 
-var items = [
+items = [
 
 {
 	name: 'test',

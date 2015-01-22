@@ -1,9 +1,9 @@
+<i ng-click="closeSignIn()" class="icon-cross"></i>
 <ul>
   <li>
-    <span ng-click="closeMobileNav()" class="close mobile-show">X</span>
     <div class="row">
+      <h4 class="mobile-hide">Login to UMX</h4>
       <a class="logo mobile-show" title="UMX - University Market Exchange" href="#"></a>
-
       <div class="medium-5 columns">
         <i class="icon-mail2"></i>
         <input type="email" placeholder="Email" class="form-control">
@@ -11,12 +11,13 @@
       <div class="medium-5 columns">
         <i class="icon-lock"></i>
         <input type="password" placeholder="Password" class="form-control">
+        <a href="#" class="forgot mobile-hide">Forgot your Password?</a>
       </div>
       <div class="medium-2 columns">
         <input type="submit" value="Sign In" class="button-sec">
-        <a href="#" class="forgot">Forgot your Password?</a>
+        <a href="#" class="forgot mobile-show" aria-disabled="true">Forgot your Password?</a>
       </div>
     </div>
     <footer class="nav-footer mobile-show">University Market Exchange &copy; 2015</footer>
   </li>
-  </ul>
+</ul>

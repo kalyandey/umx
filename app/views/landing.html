@@ -1,40 +1,41 @@
 <div class="wrapper" ng-controller="LandingController">
-<header  class="landing" ng-include="'views/landing-header.html'"></header>
-<nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'views/landing-nav.html'"></nav>
-<div id="splash" class="container">
-  <div class="table-cell">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Online Exchange Has Never Been Easier</h1>
+  <header class="landing" ng-include="'views/landing-header.html'"></header>
+  <nav ng-class="mobileViewClass" class="landing animated" role="navigation"
+       ng-include="'views/landing-nav.html'"></nav>
+  <section ng-class="signInToggle" id="splash" class="container">
+    <div class="table-cell">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Online Exchange Has Never Been Easier</h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="medium-7 large-6 large-offset-1 columns">
-        <img src="http://placehold.it/900x500/00000&text=video" class="img-responsive">
-      </div>
-      <div class="medium-5 large-4 end columns">
-        <p class="text-left">All you need is a .edu email address to get started. Try it now!</p>
+      <div class="row">
+        <div class="medium-7 large-6 large-offset-1 columns">
+          <img src="http://placehold.it/900x500/00000&text=video" class="img-responsive">
+        </div>
+        <div class="medium-5 large-4 end columns">
+          <p class="text-left">All you need is a .edu email address to get started. Try it now!</p>
 
-        <form role="form">
-          <div class="form-group">
-            <i class="icon-mail2"></i>
-            <input class="form-control" id="exampleInputEmail1" placeholder="Email" type="email">
-          </div>
-          <div class="row">
-            <div class="medium-5 columns ">
-              <!-- Need to add controller for modal -->
-              <div class="text-left" >
-                <div ng-include="'views/terms.html'"></div>
-                <a class="terms" ng-click="openModal()">Terms and Conditions</a>
+          <form role="form">
+            <div class="form-group">
+              <i class="icon-mail2"></i>
+              <input class="form-control" id="exampleInputEmail1" placeholder="Email" type="email">
+            </div>
+            <div class="row">
+              <div class="medium-5 columns ">
+                <!-- Need to add controller for modal -->
+                <div class="text-left">
+                  <div ng-include="'views/terms.html'"></div>
+                  <a class="terms" ng-click="openModal()">Terms and Conditions</a>
+                </div>
+              </div>
+              <div class="medium-7 columns text-right">
+                <button type="submit" class="button">Sign Up</button>
               </div>
             </div>
-            <div class="medium-7 columns text-right">
-              <button type="submit" class="button">Sign Up</button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 </div>
