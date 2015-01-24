@@ -17,9 +17,12 @@ var app = angular.module('umxFrontendApp', [
   'ngTouch',
   'ui.router',
   'mm.foundation',
-  'matchmedia-ng'
+  'matchmedia-ng',
+  'satellizer'
 ])
-
+/** 
+Routing
+**/
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('landing', {
@@ -33,8 +36,13 @@ var app = angular.module('umxFrontendApp', [
     $urlRouterProvider.otherwise('/landing');
 
   })
+/** 
+Routing End
+**/
 
-
+/** 
+Landing Controller
+**/
   .controller('LandingController', function ($scope, $modal, matchmedia) {
 
     matchmedia.onPhone(function (mediaQueryList) {
@@ -62,7 +70,13 @@ var app = angular.module('umxFrontendApp', [
         };
       }
     });
+/** 
+Landing Controller End
+**/
 
+/** 
+Modal
+**/
     $scope.openModal = function () {
       $modal.open({
         templateUrl: 'TermsModal.html',
@@ -77,4 +91,24 @@ var app = angular.module('umxFrontendApp', [
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
     };
+  })
+/** 
+Modal End
+**/
+
+
+/** 
+Authentication
+**/
+.config(function($authProvider){
+  $authProvider.oauth2({
+      name: 'umx',
+      url: 'http://umx.azurewebsites.net:80/api/login',
+      redirectUri: window.location.origin,
+      clientId: 'CBVSKYUTJKHCCTEZIGWKEWFZOGP4E6I5',
+      authorizationEndpoint: 'http://umx.azurewebsites.net:80/api/oauth/authorize'
   });
+});
+/** 
+Authentication End
+**/
