@@ -26,14 +26,15 @@ Routing
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('landing', {
-        url: '/landing',
+        url: '/',
+        controller: 'LandingController',
         templateUrl: '../views/landing.html'
       })
       .state('dashboard', {
         url: '/dashboard',
         templateUrl: '../views/dashboard.html'
       });
-    $urlRouterProvider.otherwise('/landing');
+    $urlRouterProvider.otherwise('/');
 
   })
 /** 
