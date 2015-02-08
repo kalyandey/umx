@@ -1,19 +1,17 @@
-<nav class="top-bar" data-topbar role="navigation" ng-include="'dashboard-nav.html'"></nav>
-
-  <div ng-controller="ItemController as umxFrontendApp">
-    <div class="row">
-      <div ng-repeat="product in umxFrontendApp.products">
-         <div class="small-2 columns">
-          <img ng-src="{{product.images[0].full}}"/>
-            <small>{{product.name}}</small><br>
-            <em class="push-right">{{product.price | currency}}</em><br>
-
-            <small>Seller:{{product.seller}}</small><br>
-            <small>Condition:{{product.condition}}</small>
-            <small>Description:{{product.description}}</small>
-            <button ng-show="product.available">Button</button>
-        </div>
-     </div>
-   </div>
+<header class="dashboard" ng-include="'views/dashboard-header.html'"></header>
+<nav class="dashboard" role="navigation" ng-include="'views/dashboard-nav.html'"></nav>
+<section class="dashboard" ng-controller="ItemController as umxFrontendApp">
+  <div class="row">
+    <div class="small-6 medium-3 large-2 columns" ng-repeat="product in umxFrontendApp.products">
+      <img ng-src="{{product.images[0].full}}"/>
+      <small>{{product.name}}</small>
+      <br>
+      <em class="push-right">{{product.price | currency}}</em><br>
+      <small>Seller:{{product.seller}}</small>
+      <br>
+      <small>Condition:{{product.condition}}</small>
+      <small>Description:{{product.description}}</small>
+      <button ng-show="product.available">Button</button>
+    </div>
   </div>
-</div>
+</section>

@@ -6,8 +6,9 @@
   font-family: "aktiv-grotesk-std", sans-serif;
   @include simpleTransition(.3s all ease-in-out);
   font-weight: 100;
-  &:hover {
-    background:$umxOrange;
+  cursor:pointer;
+  &:hover, &:active, &:focus {
+    background:darken($umxOrange,10%);
   }
 }
 
