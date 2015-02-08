@@ -7,6 +7,7 @@
   @include simpleTransition(.3s all ease-in-out);
   font-weight: 100;
   cursor:pointer;
+
   &:hover, &:active, &:focus {
     background:darken($umxOrange,10%);
   }
