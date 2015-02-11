@@ -1,15 +1,15 @@
 <div ng-controller="CreateController">
   <!-- Right Nav Section -->
 
-  <ul class="left">
+  <div class="left">
     <div ng-include="'create.html'"></div>
-    <li class="active create">
-      <a class="button" ng-click="openModal()">Create</a>
-    </li>
-  </ul>
+    <a class="button create" ng-click="openModal()">Create</a>
+    <input type="text" placeholder="Search the Exchange">
+  </div>
 
   <ul class="right">
     <li><a class="icon-earth" href="#" title="Notifications"></a><span>10</span></li>
     <li><a class="icon-cog" href="#" title="Settings"></a><span></span></li>
   </ul>
+
 </div>

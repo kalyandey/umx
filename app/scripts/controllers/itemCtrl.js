@@ -9,9 +9,9 @@ app.controller('ItemController', function(){
 items = [
 
 {
-	name: 'test',
-	price: 2.45,
-	seller: 'mike',
+	name: 'Perspectives in Medical Sociology (2007, Paperback)',
+	price: 122.45,
+	seller: 'Mike Sellers',
 	condition: 'new',
 	description: 'item description',
 	images: [
@@ -25,9 +25,9 @@ items = [
 	sold: false
 },
 {
-   name: 'test',
-	price: 2.45,
-	seller: 'mike',
+   name: 'Perspectives in Medical Sociology (2007, Paperback)',
+	price: 22.45,
+	seller: 'Mike Sellers',
 	condition: 'like new',
 	description: 'item description',
 	images: [
@@ -41,9 +41,9 @@ items = [
 	sold: false
 },
 {
-   name: 'test',
-	price: 2.45,
-	seller: 'mike',
+   name: 'Perspectives in Medical Sociology (2007, Paperback)',
+	price: 122.45,
+	seller: 'Mike Sellers',
 	condition: 'used',
 	description: 'item description',
 	images: [
@@ -57,9 +57,9 @@ items = [
 	sold: false
 },
 {
-   name: 'test',
-	price: 2.45,
-	seller: 'mike',
+   name: 'Perspectives in Medical Sociology (2007, Paperback)',
+	price: 19.99,
+	seller: 'Mike Sellers',
 	condition: 'new',
 	description: 'item description',
 	images: [
@@ -73,9 +73,9 @@ items = [
 	sold: false
 },
 {
-   name: 'test',
-	price: 2.45,
-	seller: 'mike',
+   name: 'Perspectives in Medical Sociology (2007, Paperback)',
+	price: 12.45,
+	seller: 'Mike Sellers',
 	condition: 'new',
 	description: 'item description',
 	images: [
@@ -89,9 +89,9 @@ items = [
 	sold: false
 },
 {
-   name: 'test',
-	price: 2.45,
-	seller: 'mike',
+   name: 'Perspectives in Medical Sociology (2007, Paperback)',
+	price: 332.45,
+	seller: 'Mike Sellers',
 	condition: 'new',
 	description: 'item description',
 	images: [

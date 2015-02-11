@@ -1,17 +1,20 @@
 <header class="dashboard" ng-include="'views/dashboard-header.html'"></header>
 <nav class="dashboard" role="navigation" ng-include="'views/dashboard-nav.html'"></nav>
 <section class="dashboard" ng-controller="ItemController as umxFrontendApp">
+  <section class="categories">
+    <div>Categories <span class="arrow-down"></span></div>
+  </section>
   <div class="row">
     <div class="small-6 medium-3 large-2 columns" ng-repeat="product in umxFrontendApp.products">
-      <img ng-src="{{product.images[0].full}}"/>
-      <small>{{product.name}}</small>
-      <br>
-      <em class="push-right">{{product.price | currency}}</em><br>
-      <small>Seller:{{product.seller}}</small>
-      <br>
-      <small>Condition:{{product.condition}}</small>
-      <small>Description:{{product.description}}</small>
-      <button ng-show="product.available">Button</button>
+      <a href="#"><img ng-src="{{product.images[0].full}}"/></a>
+      <a class="p-name" href="#">{{product.name}}</a>
+      <ul class="product-info">
+        <li>Seller: <a href="#">{{product.seller}}</a></li>
+        <li>Condition: {{product.condition}}</li>
+        <li>Description: {{product.description}}</li>
+      </ul>
+      <span class="price">{{product.price | currency}}</span>
+      <!--<button class="button" ng-show="product.available">Button</button>-->
     </div>
   </div>
 </section>
