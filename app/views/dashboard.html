@@ -3,6 +3,19 @@
 <section class="dashboard" ng-controller="ItemController as umxFrontendApp">
   <section class="categories">
     <div><span ng-click="toggleCategories()">Categories <span class="arrow-down"></span></span> </div>
+    <div ng-class="categoriesActive ? 'bounceInDown' : 'bounceOutUp'" class="categories-modal animated">
+      <ul>
+        <li>Books <span>254</span></li>
+        <li>School Supplies <span>254</span></li>
+        <li>Electronics <span>254</span></li>
+        <li>Clothing <span>254</span></li>
+        <li>Furniture <span>254</span></li>
+        <li>Sports & Outdoor <span>254</span></li>
+        <li>Automotive <span>254</span></li>
+        <li>Beauty / Health & Fitness <span>254</span></li>
+        <li>Party Supplies & Crafts <span>254</span></li>
+      </ul>
+    </div>
   </section>
   <div class="row">
     <div class="small-6 medium-3 large-2 columns" ng-repeat="product in umxFrontendApp.products">
@@ -17,17 +30,5 @@
       <!--<button class="button" ng-show="product.available">Button</button>-->
     </div>
   </div>
-  <div class="categories-modal">
-    <ul>
-      <li>Books</li>
-      <li>School Supplies</li>
-      <li>Electronics</li>
-      <li>Clothing</li>
-      <li>Furniture</li>
-      <li>Sports & Outdoor</li>
-      <li>Automotive</li>
-      <li>Beauty / Health & Fitness</li>
-      <li>Party Supplies & Crafts</li>
-    </ul>
-  </div>
+
 </section>

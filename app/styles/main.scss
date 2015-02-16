@@ -376,10 +376,10 @@ footer {
     }
     &.dashboard {
       width: auto;
-      h1{
-        margin:1.2rem 0 0 0;
-        a{
-          margin:0;
+      h1 {
+        margin: 1.2rem 0 0 0;
+        a {
+          margin: 0;
         }
       }
       .name {
@@ -555,9 +555,10 @@ footer {
       width: 80%
     }
     .right {
-      padding: 2.3rem 1rem 0 0;
+      padding: 2.2rem 1rem 0 0;
       margin: 0;
       width: 20%;
+      text-align: right;
       li {
         margin-left: .6rem;
         position: relative;
@@ -593,6 +594,83 @@ footer {
       background: #f1f1f1;
       width: 100%;
       height: 5rem;
+      position: relative;
+
+      .categories-modal {
+        position: absolute;
+        width: 20rem;
+        top: 4.5rem;
+        left: 1rem;
+        background: #fff;
+        z-index: 2;
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, .3);
+        padding: 0 1rem;
+
+        @include simpleTransform(translateY(-200%));
+
+        &.active {
+
+        }
+        &:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: .6rem solid transparent;
+          border-right: .6rem solid transparent;
+          border-bottom: .6rem solid #fff;
+          position: absolute;
+          left: 8.3rem;
+          top: -.5rem;
+        }
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          list-style-type: none;
+          border-bottom: 1px solid #c4c4c4;
+          cursor: pointer;
+          padding: .5rem 0;
+          font-size: 1.2rem;
+          font-weight: 300;
+          position: relative;
+          &:before, &:after {
+            content: '';
+            width: 1px;
+            top: .7rem;
+            height: 15px;
+            background: #ddd;
+            position: absolute;
+            right: 1rem;
+            @include simpleTransition(.2s all ease);
+            @include simpleTransform(rotate(-40deg));
+          }
+          &:after {
+            right: 1rem;
+            top: 1.4rem;
+            @include simpleTransform(rotate(40deg));
+          }
+          span {
+            background: #efefef;
+            font-size: .7rem;
+            padding: .1rem .3rem;
+            border-radius: .3rem;
+            margin-left: .5rem;
+
+          }
+          &:last-child {
+            border-bottom: 0;
+          }
+          &:hover {
+            &:before, &:after {
+              @include simpleTransform(translateX(5px) rotate(-40deg))
+            }
+            &:after {
+              @include simpleTransform(translateX(5px) rotate(40deg))
+            }
+          }
+        }
+      }
       div {
         text-align: left;
         display: block;
@@ -602,8 +680,10 @@ footer {
         font-size: 1.2rem;
         color: #5d5d5d;
 
-        span{
+        span {
           cursor: pointer;
+          padding: 1rem;
+          @include vendor-prefix(user-select, none);
         }
       }
       .arrow-down {
@@ -612,14 +692,15 @@ footer {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid $umxOrange;
-        line-height:0;
-        display:inline-block;
-        vertical-align:middle;
+        line-height: 0;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
       }
     }
     .row {
       max-width: 90%;
-      margin-top:3rem;
+      margin-top: 3rem;
       a {
         color: $umxOrange;
         text-decoration: underline;
@@ -703,6 +784,17 @@ footer {
   }
   header {
     height: 5.8rem;
+    &.dashboard {
+      h1 {
+        padding-top: .3rem;
+        margin: 0;
+        .logo {
+          padding: 0;
+          height: 5.5125rem;
+        }
+      }
+
+    }
     .menu-icon a {
       margin-top: 2.2rem;
     }
@@ -710,7 +802,7 @@ footer {
       h1 {
         .logo {
           width: 16rem;
-          height: 6.8125rem;
+          height: 5.8125rem;
           padding: .4rem 0 0 .4rem;
         }
       }
@@ -723,11 +815,14 @@ footer {
 
   nav.dashboard {
     width: calc(100% - 16rem);
+    input[type=text] {
+      font-size: 2.8rem;
+    }
     a {
       font-size: 1.8rem;
     }
     .right {
-      padding-top: 1.8rem;
+      padding-top: 2.2rem;
       li {
         margin-left: .3rem;
         margin-right: 1rem;
