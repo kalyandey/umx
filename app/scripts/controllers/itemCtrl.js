@@ -2,7 +2,10 @@
 /*jshint unused: false, undef:false */
 var items;
 
-app.controller('ItemController', function(){
+app.controller('ItemController', function($scope){
+  $scope.toggleCategories = function () {
+
+  }
 	this.products = items;
 });
 

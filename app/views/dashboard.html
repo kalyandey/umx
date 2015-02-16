@@ -2,7 +2,7 @@
 <nav class="dashboard" role="navigation" ng-include="'views/dashboard-nav.html'"></nav>
 <section class="dashboard" ng-controller="ItemController as umxFrontendApp">
   <section class="categories">
-    <div>Categories <span class="arrow-down"></span></div>
+    <div><span ng-click="toggleCategories()">Categories <span class="arrow-down"></span></span> </div>
   </section>
   <div class="row">
     <div class="small-6 medium-3 large-2 columns" ng-repeat="product in umxFrontendApp.products">
@@ -16,5 +16,18 @@
       <span class="price">{{product.price | currency}}</span>
       <!--<button class="button" ng-show="product.available">Button</button>-->
     </div>
+  </div>
+  <div class="categories-modal">
+    <ul>
+      <li>Books</li>
+      <li>School Supplies</li>
+      <li>Electronics</li>
+      <li>Clothing</li>
+      <li>Furniture</li>
+      <li>Sports & Outdoor</li>
+      <li>Automotive</li>
+      <li>Beauty / Health & Fitness</li>
+      <li>Party Supplies & Crafts</li>
+    </ul>
   </div>
 </section>
