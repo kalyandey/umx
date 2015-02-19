@@ -3,7 +3,7 @@
 <section class="dashboard" ng-controller="ItemController as umxFrontendApp">
   <section class="categories">
     <div><span ng-click="toggleCategories()">Categories <span class="arrow-down"></span></span> </div>
-    <div ng-class="categoriesActive ? 'bounceInDown' : 'bounceOutUp'" class="categories-modal animated">
+    <div ng-class="categoriesActive ? 'in' : 'out'" class="categories-modal">
       <ul>
         <li>Books <span>254</span></li>
         <li>School Supplies <span>254</span></li>

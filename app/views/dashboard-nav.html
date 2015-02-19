@@ -7,9 +7,24 @@
     <input type="text" placeholder="Search the Exchange">
   </div>
 
-  <ul class="right">
-    <li><a class="icon-earth" href="#" title="Notifications"></a><span>10</span></li>
-    <li><a class="icon-cog" href="#" title="Settings"></a><span></span></li>
-  </ul>
+  <div class="right">
+    <!--<li><i class="icon-earth" href="" title="Notifications"></i><span>10</span></li>-->
+    <!--<li><i class="icon-cog" href="" title="Settings"></i><span></span></li>-->
+
+    <a dropdown-toggle="#notifications" class="icon-earth"><span>10</span></a>
+    <ul id="notifications" class="f-dropdown notifications">
+      <li ng-repeat="choice in items">
+        <a>{{choice}}</a>
+      </li>
+    </ul>
+
+    <a dropdown-toggle="#settings" class="icon-cog"><span>!</span></a>
+    <ul id="settings" class="f-dropdown settings">
+      <li ng-repeat="(label, url) in linkItems">
+        <a href="{{url}}">{{label}}</a>
+      </li>
+    </ul>
+
+  </div>
 
 </div>

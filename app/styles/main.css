@@ -582,38 +582,54 @@ footer {
       color: #e5e5e5; }
     nav.dashboard :-ms-input-placeholder {
       color: #e5e5e5; }
-    nav.dashboard li {
-      list-style-type: none;
-      display: inline-block; }
-      nav.dashboard li a {
-        color: #8dc540;
-        font-size: 1.5rem;
-        display: inline-block;
-        vertical-align: text-bottom; }
+    nav.dashboard a {
+      color: #8dc540;
+      font-size: 1.5rem;
+      display: inline-block;
+      vertical-align: text-bottom;
+      position: relative;
+      margin-left: 1rem; }
+      nav.dashboard a span {
+        top: -.5rem;
+        right: -.4rem;
+        position: absolute;
+        width: 1.1rem;
+        height: 1.1rem;
+        background: #fb532c;
+        color: #fff;
+        text-align: center;
+        line-height: 1.1rem;
+        display: block;
+        font-size: .5rem;
+        border-radius: 1rem;
+        box-shadow: 1px 1px 1px #bd2704; }
     nav.dashboard .left {
       width: 80%; }
     nav.dashboard .right {
-      padding: 2.2rem 1rem 0 0;
+      padding: 2.2rem 2rem 0 0;
       margin: 0;
       width: 20%;
       text-align: right; }
-      nav.dashboard .right li {
-        margin-left: .6rem;
-        position: relative; }
-        nav.dashboard .right li span {
-          top: -.5rem;
-          right: -.4rem;
-          position: absolute;
-          width: 1.1rem;
-          height: 1.1rem;
-          background: #fb532c;
-          color: #fff;
-          text-align: center;
-          line-height: 1.1rem;
-          display: block;
-          font-size: .5rem;
-          border-radius: 1rem;
-          box-shadow: 1px 1px 1px #bd2704; }
+      nav.dashboard .right ul {
+        padding: 0;
+        text-align: left; }
+        nav.dashboard .right ul li {
+          margin: 0;
+          padding: 0; }
+          nav.dashboard .right ul li a {
+            font-size: 1rem;
+            width: 100%;
+            margin: 0;
+            padding: .8rem 1rem;
+            color: #333; }
+        nav.dashboard .right ul.settings {
+          top: 5rem !important;
+          right: 1.9rem !important;
+          left: initial !important; }
+        nav.dashboard .right ul.notifications {
+          top: 5rem !important;
+          right: 4.9rem !important;
+          left: initial !important; }
     nav.dashboard .create.button {
       padding: .7rem 1.8rem;
       font-size: .8rem;
@@ -630,19 +646,33 @@ footer {
       position: relative; }
       section.dashboard section.categories .categories-modal {
         position: absolute;
-        width: 20rem;
+        width: 22rem;
         top: 4.5rem;
         left: 1rem;
         background: #fff;
         z-index: 2;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-        padding: 0 1rem;
-        -webkit-transform: translateY(-200%);
-        -ms-transform: translateY(-200%);
-        -moz-transform: translateY(-200%);
-        -o-transform: translateY(-200%);
-        transform: translateY(-200%); }
-        section.dashboard section.categories .categories-modal:before {
+        border: 1px solid #ccc;
+        padding: 0;
+        -webkit-transition: 0.3s all ease;
+        -ms-transition: 0.3s all ease;
+        -moz-transition: 0.3s all ease;
+        -o-transition: 0.3s all ease;
+        transition: 0.3s all ease; }
+        section.dashboard section.categories .categories-modal.in {
+          opacity: 1;
+          -webkit-transform: translateX(0%);
+          -ms-transform: translateX(0%);
+          -moz-transform: translateX(0%);
+          -o-transform: translateX(0%);
+          transform: translateX(0%); }
+        section.dashboard section.categories .categories-modal.out {
+          opacity: 0;
+          -webkit-transform: translateX(-200%);
+          -ms-transform: translateX(-200%);
+          -moz-transform: translateX(-200%);
+          -o-transform: translateX(-200%);
+          transform: translateX(-200%); }
+        section.dashboard section.categories .categories-modal:before, section.dashboard section.categories .categories-modal:after {
           content: "";
           width: 0;
           height: 0;
@@ -651,7 +681,12 @@ footer {
           border-bottom: .6rem solid #fff;
           position: absolute;
           left: 8.3rem;
-          top: -.5rem; }
+          top: -.5rem;
+          z-index: 2; }
+        section.dashboard section.categories .categories-modal:after {
+          top: -.55rem;
+          border-bottom: .6rem solid #ccc;
+          z-index: 1; }
         section.dashboard section.categories .categories-modal ul {
           padding: 0;
           margin: 0; }
@@ -659,18 +694,18 @@ footer {
           list-style-type: none;
           border-bottom: 1px solid #c4c4c4;
           cursor: pointer;
-          padding: .5rem 0;
           font-size: 1.2rem;
           font-weight: 300;
+          padding: .5rem 1rem;
           position: relative; }
           section.dashboard section.categories .categories-modal li:before, section.dashboard section.categories .categories-modal li:after {
             content: '';
             width: 1px;
             top: .7rem;
             height: 15px;
-            background: #ddd;
+            background: #ccc;
             position: absolute;
-            right: 1rem;
+            right: 1.5rem;
             -webkit-transition: 0.2s all ease;
             -ms-transition: 0.2s all ease;
             -moz-transition: 0.2s all ease;
@@ -682,7 +717,7 @@ footer {
             -o-transform: rotate(-40deg);
             transform: rotate(-40deg); }
           section.dashboard section.categories .categories-modal li:after {
-            right: 1rem;
+            right: 1.5rem;
             top: 1.4rem;
             -webkit-transform: rotate(40deg);
             -ms-transform: rotate(40deg);
@@ -694,21 +729,24 @@ footer {
             font-size: .7rem;
             padding: .1rem .3rem;
             border-radius: .3rem;
-            margin-left: .5rem; }
+            margin-left: .5rem;
+            vertical-align: middle; }
           section.dashboard section.categories .categories-modal li:last-child {
             border-bottom: 0; }
-          section.dashboard section.categories .categories-modal li:hover:before, section.dashboard section.categories .categories-modal li:hover:after {
-            -webkit-transform: translateX(5px) rotate(-40deg);
-            -ms-transform: translateX(5px) rotate(-40deg);
-            -moz-transform: translateX(5px) rotate(-40deg);
-            -o-transform: translateX(5px) rotate(-40deg);
-            transform: translateX(5px) rotate(-40deg); }
-          section.dashboard section.categories .categories-modal li:hover:after {
-            -webkit-transform: translateX(5px) rotate(40deg);
-            -ms-transform: translateX(5px) rotate(40deg);
-            -moz-transform: translateX(5px) rotate(40deg);
-            -o-transform: translateX(5px) rotate(40deg);
-            transform: translateX(5px) rotate(40deg); }
+          section.dashboard section.categories .categories-modal li:hover {
+            background: #f4f4f4; }
+            section.dashboard section.categories .categories-modal li:hover:before, section.dashboard section.categories .categories-modal li:hover:after {
+              -webkit-transform: translateX(5px) rotate(-40deg);
+              -ms-transform: translateX(5px) rotate(-40deg);
+              -moz-transform: translateX(5px) rotate(-40deg);
+              -o-transform: translateX(5px) rotate(-40deg);
+              transform: translateX(5px) rotate(-40deg); }
+            section.dashboard section.categories .categories-modal li:hover:after {
+              -webkit-transform: translateX(5px) rotate(40deg);
+              -ms-transform: translateX(5px) rotate(40deg);
+              -moz-transform: translateX(5px) rotate(40deg);
+              -o-transform: translateX(5px) rotate(40deg);
+              transform: translateX(5px) rotate(40deg); }
       section.dashboard section.categories div {
         text-align: left;
         display: block;
