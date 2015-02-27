@@ -9,7 +9,7 @@ app.controller('CreateController', function ($scope, $modal) {
 
   };
   $scope.linkItems = {
-    "Settings": "#",
-    "Sign Out": "/"
+    'Settings': '#',
+    'Sign Out': '/'
   };
 });
