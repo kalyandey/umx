@@ -13,3 +13,13 @@ app.controller('CreateController', function ($scope, $modal) {
     'Sign Out': '/'
   };
 });
+
+
+app.controller('ConditionController', function ($scope){
+    $scope.items = [
+      'new',
+      'Like new',
+      'used',
+      'free'
+    ];
+});

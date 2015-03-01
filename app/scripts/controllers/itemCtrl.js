@@ -2,7 +2,7 @@
 /*jshint unused: false, undef:false */
 var items;
 
-app.controller('ItemController', function($scope){
+app.controller('ItemController', function ($scope){
   $scope.toggleCategories = function () {
     $scope.categoriesActive = ($scope.categoriesActive) ? false : true;
     return $scope.categoriesActive;

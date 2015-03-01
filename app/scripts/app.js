@@ -30,6 +30,36 @@ Routing
         controller: 'LandingController',
         templateUrl: '../views/landing.html'
       })
+      .state('products', {
+        url: '/products',
+        controller: 'ProductController',
+        templateUrl: '../views/products.html'
+      })
+      .state('showProduct', {
+        url: '/products/:id/view',
+        controller: 'ProductShowController',
+        templateUrl: '../views/product-view.html'
+      })
+      .state('createProduct', {
+        url: '/product/create',
+        controller: 'ProductCreateController',
+        templateUrl: '../views/product-create.html'
+      })
+      .state('editProduct', {
+        url: '/product/:id/edit',
+        controller: 'ProductEditController',
+        templateUrl: '../views/product-edit.html'
+      })
+      .state('deleteProduct', {
+        url: '/product/:id/delete',
+        controller: 'ProductDeleteController',
+        templateUrl: '../views/product-delete.html'
+      })
+      .state('updateProduct', {
+        url: '/product/:id/update',
+        controller: 'ProductUpdateController',
+        templateUrl: '../views/product-update.html'
+      })
       .state('dashboard', {
         url: '/dashboard',
         templateUrl: '../views/dashboard.html'
@@ -86,8 +116,6 @@ Modal
     };
 
   })
-
-
   .controller('ModalCtrl', function ($scope, $modalInstance) {
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
