@@ -8,10 +8,15 @@ app.controller('CreateController', function ($scope, $modal) {
     });
 
   };
-  $scope.linkItems = {
+/*  $scope.settingsItems = {
     'Settings': '#',
     'Sign Out': '/'
-  };
+  };*/
+/*    $scope.notificationItems = {
+    '{{product.name}} has received a new offer from {{user}}!': '#',
+    '{{user}} has accepted the offer on {{product.name}}': '#',
+    '{{user}} has rejected the offer on {{product.name}}': '#'
+  };*/
 });
 
 

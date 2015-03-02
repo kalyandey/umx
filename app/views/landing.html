@@ -1,7 +1,6 @@
-<div class="wrapper">
-  <header class="landing" ng-include="'views/landing-header.html'"></header>
-  <nav ng-class="mobileViewClass" class="landing animated" role="navigation"
-       ng-include="'views/landing-nav.html'"></nav>
+<div class="wrapper ">
+  <header class="landing" ng-include="'views/header.html'"></header>
+  <nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'views/nav.html'"></nav>
   <section ng-class="signInToggle" id="splash" class="container">
     <div class="table-cell">
       <div class="row">
@@ -29,7 +28,7 @@
                 </div>
               </div>
               <div class="medium-7 columns text-right">
-                <button type="submit" class="button">Sign Up</button>
+                <button ng-click="logIn()" type="submit" class="button">Sign Up</button>
               </div>
             </div>
           </form>

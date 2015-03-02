@@ -43,6 +43,22 @@
   content: "\e604";
 }
 
+.icon-checkmark:before {
+  content: "\e605";
+}
+
+.icon-cancel:before {
+  content: "\e606";
+}
+
+.icon-notice:before {
+  content: "\e607";
+}
+
+.icon-switch:before {
+  content: "\e608";
+}
+
 @import '../sass/variables';
 @import '../sass/mixins';
 @import '../sass/extends';
@@ -94,7 +110,7 @@ h1 {
   max-width: 90%;
 }
 
-.landing-container {
+.main {
   height: calc(100% - 20px);
   .wrapper {
     height: 100%;
@@ -361,7 +377,7 @@ footer {
     max-width: 80%;
   }
 
-  .landing-container {
+  .main {
     height: calc(100% - 70px);
   }
   header {
@@ -578,24 +594,52 @@ footer {
         li {
           margin: 0;
           padding: 0;
+          &:hover {
+            background:#f6f6f6;
+          }
           a {
             font-size: 1rem;
             width: 100%;
             margin: 0;
-            padding: .8rem 1rem;
+            padding: .6rem 1rem;
             color: $umxGrey;
+            display: block;
+            i {
+              font-size: 1.5rem;
+              vertical-align: middle;
+              margin-right: .7rem;
+              &.icon-cancel {
+                color:red;
+              }
+              &.icon-checkmark {
+                color:$umxMainGreen;
+              }
+              &.icon-notice {
+                color:$umxOrange;
+              }
+            }
           }
         }
         &.settings {
           top: 5rem !important;
           right: 1.9rem !important;
           left: initial !important;
+          i{
+            float:right;
+            font-size:1rem;
+            margin-right:0;
+          }
         }
         &.notifications {
           top: 5rem !important;;
           right: 4.9rem !important;
           left: initial !important;
         }
+      }
+      &.f-dropdown {
+        width: auto;
+        max-width: 40rem;
+        min-width: 12rem;
       }
     }
     .create.button {
@@ -622,7 +666,7 @@ footer {
         left: 1rem;
         background: #fff;
         z-index: 2;
-        border:1px solid #ccc;
+        border: 1px solid #ccc;
         padding: 0;
         @include simpleTransition(.3s all ease);
 
@@ -646,12 +690,12 @@ footer {
           position: absolute;
           left: 8.3rem;
           top: -.5rem;
-          z-index:2;
+          z-index: 2;
         }
-        &:after{
-          top:-.55rem;
+        &:after {
+          top: -.55rem;
           border-bottom: .6rem solid #ccc;
-          z-index:1;
+          z-index: 1;
         }
         ul {
           padding: 0;
@@ -663,7 +707,7 @@ footer {
           cursor: pointer;
           font-size: 1.2rem;
           font-weight: 300;
-          padding:.5rem 1rem;
+          padding: .5rem 1rem;
           position: relative;
           &:before, &:after {
             content: '';
@@ -693,7 +737,7 @@ footer {
             border-bottom: 0;
           }
           &:hover {
-            background:#f4f4f4;
+            background: #f4f4f4;
             &:before, &:after {
               @include simpleTransform(translateX(5px) rotate(-40deg))
             }
@@ -811,7 +855,7 @@ footer {
   h1 {
     font-size: 3.25rem;
   }
-  .landing-container {
+  .main {
     height: calc(100% - 95px);
   }
   header {
@@ -930,4 +974,38 @@ footer {
       }
     }
   }
+}
+
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+
+.reveal-modal.fade {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  -moz-transition:    -moz-transform .3s ease-out;
+  -o-transition:      -o-transform .3s ease-out;
+  transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+.reveal-modal.in {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.reveal-modal-bg.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.reveal-modal-bg.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
 }

@@ -20,7 +20,7 @@ var app = angular.module('umxFrontendApp', [
   'matchmedia-ng',
   'satellizer'
 ])
-/** 
+/**
 Routing
 **/
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -67,11 +67,14 @@ Routing
     $urlRouterProvider.otherwise('/');
 
   })
-/** 
+  .run(function ($state,$rootScope) {
+    $rootScope.$state = $state;
+  })
+/**
 Routing End
 **/
 
-/** 
+/**
 Landing Controller
 **/
   .controller('LandingController', function ($scope, $modal, matchmedia) {
@@ -101,11 +104,11 @@ Landing Controller
         };
       }
     });
-/** 
+/**
 Landing Controller End
 **/
 
-/** 
+/**
 Modal
 **/
     $scope.openModal = function () {
@@ -121,12 +124,12 @@ Modal
       $modalInstance.dismiss('cancel');
     };
   })
-/** 
+/**
 Modal End
 **/
 
 
-/** 
+/**
 Authentication
 **/
 .config(function($authProvider){
@@ -138,6 +141,6 @@ Authentication
       authorizationEndpoint: 'http://umx.azurewebsites.net:80/api/oauth/authorize'
   });
 });
-/** 
+/**
 Authentication End
 **/
