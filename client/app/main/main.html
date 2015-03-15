@@ -1,6 +1,6 @@
 <div class="wrapper ">
     <header class="landing" ng-include="'components/header/header.html'"></header>
-    <nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'components/navbar/navbar.html'"></nav>
+    <nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'components/navbar/landing.html'"></nav>
     <section ng-class="signInToggle" id="splash" class="container">
         <div class="table-cell">
             <div class="row">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="medium-5 large-4 end columns">
                     <p class="text-left">All you need is a .edu email address to get started. Try it now!</p>
-                    <form role="form" ng-submit="addStudent()" ng-controller="StudentCreateController">
+                    <form role="form" ng-submit="addStudent()">
                         <div class="form-group">
                             <i class="icon-mail2"></i>
                             <input class="form-control" ng-model="email" id="exampleInputEmail1" placeholder="Email" type="email">
