@@ -11,8 +11,7 @@ angular.module('umxApp', [
   'matchmedia-ng',
   'satellizer'
 ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-  $urlRouterProvider
-  .otherwise('/');
+  $urlRouterProvider.otherwise('/');
 
   $locationProvider.html5Mode(true);
 }).run(function ($state,$rootScope) {
