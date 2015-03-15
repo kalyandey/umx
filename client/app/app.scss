@@ -140,7 +140,7 @@ header {
     }
     h1 {
       .logo {
-        background: url("../images/UMX.svg") no-repeat;
+        background: url("../assets/images/UMX.svg") no-repeat;
         width: 11rem;
         height: 5rem;
         margin-top: .5rem;
@@ -196,7 +196,7 @@ nav.landing {
   }
 
   .logo {
-    background: url("../images/UMX-mnav.svg") no-repeat;
+    background: url("../assets/images/UMX-mnav.svg") no-repeat;
     width: 14rem;
     height: 7rem;
     margin-top: 1.5rem;
@@ -290,7 +290,7 @@ nav.landing {
 }
 
 #splash {
-  background: url("../images/home.jpg") no-repeat center center fixed;
+  background: url("../assets/images/home.jpg") no-repeat center center fixed;
   @include vendor-prefix(background-size, cover);
   height: calc(100% - 2.8125rem);
   h1 {
