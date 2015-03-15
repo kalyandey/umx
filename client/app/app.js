@@ -5,10 +5,11 @@ angular.module('umxApp', [
   'ngResource',
   'ngSanitize',
   'ui.router'
-])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+]).config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  $urlRouterProvider
+  .otherwise('/');
 
-    $locationProvider.html5Mode(true);
-  });
+  $locationProvider.html5Mode(true);
+}).run(function ($state,$rootScope) {
+  $rootScope.$state = $state;
+});
