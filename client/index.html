@@ -19,6 +19,7 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/app.css">
       <!-- endinjector -->
     <!-- endbuild -->
       <script src="//use.typekit.net/bvn2rhj.js"></script>
@@ -37,7 +38,7 @@
 
     <!-- Add your site or application content here -->
     <div class="main" ui-view=""></div>
-    <div ng-include="'components/footer/footer.html'"></div>
+    <footer ng-include="'components/footer/footer.html'"></footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
