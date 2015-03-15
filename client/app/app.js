@@ -1,10 +1,15 @@
 'use strict';
 
 angular.module('umxApp', [
+  'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ngTouch',
+  'ui.router',
+  'mm.foundation',
+  'matchmedia-ng',
+  'satellizer'
 ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider
   .otherwise('/');
