@@ -1,0 +1,25 @@
+.button {
+  color: #fff;
+  background:$umxLightOrange;
+  border-radius: .2rem;
+  text-shadow: 0 1px 0 darken($umxOrange, 20%);
+  font-family: "aktiv-grotesk-std", sans-serif;
+  @include simpleTransition(.3s all ease-in-out);
+  font-weight: 100;
+  cursor:pointer;
+
+  &:hover, &:active, &:focus {
+    background:darken($umxOrange,10%);
+  }
+}
+
+.button-sec {
+  color: white;
+  background:$umxLightOrange;
+  border-radius: .2rem !important;
+  border:0;
+  font-family: "aktiv-grotesk-std", sans-serif;
+  @include simpleTransition(.3s all ease-in-out);
+  font-weight: 100;
+  outline:0 !important;
+}

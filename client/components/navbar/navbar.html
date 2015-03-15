@@ -1,20 +1,61 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">umx</a>
-    </div>
-    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
+<div ng-show="$state.includes('main')">
+    <i ng-click="closeSignIn()" class="icon-cross"></i>
+    <ul ng-if="!isAuthenticated()">
+        <li>
+            <form method="post" ng-submit="login()" name="loginForm">
+                <div class="row">
+                    <h4 class="mobile-hide">Login to UMX</h4>
+                    <a class="logo mobile-show" title="UMX - University Market Exchange" href="#"></a>
+
+                    <div class="medium-5 columns">
+                        <i class="icon-mail2"></i>
+                        <input type="email" placeholder="Email" class="form-control" ng-model="email">
+                    </div>
+                    <div class="medium-5 columns">
+                        <i class="icon-lock"></i>
+                        <input type="password" placeholder="Password" class="form-control" ng-model="password">
+                        <a href="#" class="forgot mobile-hide">Forgot your Password?</a>
+                    </div>
+                    <div class="medium-2 columns">
+                        <input type="submit" value="Sign In" class="button-sec" ng-disabled="loginForm.$invalid">
+                        <a href="#" class="forgot mobile-show" aria-disabled="true">Forgot your Password?</a>
+                    </div>
+                </div>
+            </form>
+            <footer class="nav-footer mobile-show">University Market Exchange &copy; 2015</footer>
         </li>
-      </ul>
+    </ul>
+</div>
+
+<div ng-show="$state.includes('dashboard')" ng-controller="CreateController">
+    <!-- Right Nav Section -->
+
+    <div class="left">
+        <div ng-include="'create.html'"></div>
+        <a class="button create" ng-click="openModal()">Create</a>
+        <input type="text" placeholder="Search the Exchange">
     </div>
-  </div>
+
+    <div class="right">
+        <!--<li><i class="icon-earth" href="" title="Notifications"></i><span>10</span></li>-->
+        <!--<li><i class="icon-cog" href="" title="Settings"></i><span></span></li>-->
+
+        <a dropdown-toggle="#notifications" class="icon-earth"><span>10</span></a>
+        <ul id="notifications" class="f-dropdown notifications">
+            <li><a href="#"><i class="icon-notice" /> {{product.name}} has received a new offer from {{user}}!</a></li>
+            <li><a href="#"><i class="icon-checkmark" /> {{user}} has accepted the offer on {{product.name}}</a></li>
+            <li><a href="#"><i class="icon-cancel" /> {{user}} has rejected the offer on {{product.name}}</a></li>
+        </ul>
+
+        <a dropdown-toggle="#settings" class="icon-cog"><span>!</span></a>
+        <ul id="settings" class="f-dropdown settings right">
+            <li>
+                <a href="#">Settings <i class="icon-notice" /></a>
+            </li>
+            <li>
+                <a ui-sref="landing">Sign Out <i class="icon-switch" /></a>
+            </li>
+        </ul>
+    </div>
+    <div ng-include="'views/product-create.html'"></div>
 </div>

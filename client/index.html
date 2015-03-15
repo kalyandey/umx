@@ -21,6 +21,14 @@
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+      <script src="//use.typekit.net/bvn2rhj.js"></script>
+      <script>
+          try {
+              Typekit.load();
+          }
+          catch (e) {
+          }
+      </script>
   </head>
   <body ng-app="umxApp">
     <!--[if lt IE 7]>
@@ -28,7 +36,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+    <div class="main" ui-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -74,6 +82,7 @@
           <!-- injector:js -->
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="components/header/header.controller.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->

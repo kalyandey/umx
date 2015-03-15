@@ -1,28 +1,39 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="wrapper ">
+    <header class="landing" ng-include="'components/header/header.html'"></header>
+    <nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'components/navbar/navbar.html'"></nav>
+    <section ng-class="signInToggle" id="splash" class="container">
+        <div class="table-cell">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Online Exchange Has Never Been Easier</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-7 large-6 large-offset-1 columns">
+                    <img src="http://placehold.it/900x500/00000&text=video" class="img-responsive">
+                </div>
+                <div class="medium-5 large-4 end columns">
+                    <p class="text-left">All you need is a .edu email address to get started. Try it now!</p>
+                    <form role="form" ng-submit="addStudent()" ng-controller="StudentCreateController">
+                        <div class="form-group">
+                            <i class="icon-mail2"></i>
+                            <input class="form-control" ng-model="email" id="exampleInputEmail1" placeholder="Email" type="email">
+                        </div>
+                        <div class="row">
+                            <div class="medium-5 columns ">
+                                <!-- Need to add controller for modal -->
+                                <div class="text-left">
+                                    <div ng-include="'views/terms.html'"></div>
+                                    <a class="terms" ng-click="openModal()">Terms and Conditions</a>
+                                </div>
+                            </div>
+                            <div class="medium-7 columns text-right">
+                                <button ng-click="logIn()" type="submit" class="button">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
