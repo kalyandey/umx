@@ -1,8 +1,8 @@
-<div ng-controller="CreateController">
+<div ng-controller="DashboardCtrl">
     <!-- Right Nav Section -->
 
     <div class="left">
-        <a class="button create" ng-click="openModal()">Create</a>
+        <a class="button create" ui-sref="create">Create</a>
         <input type="text" placeholder="Search the Exchange">
     </div>
 
@@ -27,5 +27,4 @@
             </li>
         </ul>
     </div>
-    <div ng-include="'app/dashboard/product-create.html'"></div>
 </div>

@@ -1,6 +1,6 @@
 <header class="dashboard" ng-include="'components/header/header.html'"></header>
 <nav class="dashboard" role="navigation" ng-include="'components/navbar/navbar.html'"></nav>
-<section class="dashboard" ng-controller="ItemController as umxFrontendApp">
+<section class="dashboard" ng-controller="ItemController">
   <section class="categories">
     <div><span ng-click="toggleCategories()">Categories <span class="arrow-down"></span></span> </div>
     <div ng-class="categoriesActive ? 'in' : 'out'" class="categories-modal">
@@ -17,17 +17,20 @@
       </ul>
     </div>
   </section>
+  <section id="items" ng-controller="ProductListController">
   <div class="row">
-    <div class="small-6 medium-3 large-2 columns" ng-repeat="product in umxFrontendApp.products">
-      <a href="#"><img ng-src="{{product.images[0].full}}"/></a>
-      <a class="p-name" href="#">{{product.name}}</a>
+    <div class="small-6 medium-3 large-2 columns" ng-repeat="item in products">
+      <a href="#"><img ng-src="{{item.image}}"/></a>
+      <a class="p-name" href="#">{{item.name}}</a>
       <ul class="product-info">
-        <li>Seller: <a href="#">{{product.seller}}</a></li>
-        <li>Condition: {{product.condition}}</li>
-        <li>Description: {{product.description}}</li>
+        <!--<li>Seller: <a href="#">{{item.seller}}</a></li>-->
+        <li>Condition: {{item.condition}}</li>
+        <li>Description: {{item.description}}</li>
+        <li>Category: {{item.category}}</li>
       </ul>
-      <span class="price">{{product.price | currency}}</span>
+      <span class="price">{{item.price | currency}}</span>
       <!--<button class="button" ng-show="product.available">Button</button>-->
     </div>
   </div>
+</section>
 </section>

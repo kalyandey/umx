@@ -14,7 +14,7 @@
                 </div>
                 <div class="medium-5 large-4 end columns">
                     <p class="text-left">All you need is a .edu email address to get started. Try it now!</p>
-                    <form role="form" ng-submit="addStudent()">
+                    <form role="form" ng-submit="addStudent()" ng-controller="StudentCreateCtrl">
                         <div class="form-group">
                             <i class="icon-mail2"></i>
                             <input class="form-control" ng-model="email" id="exampleInputEmail1" placeholder="Email" type="email">

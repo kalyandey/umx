@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('umxApp')
+
   .controller('DashboardCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    
   })
 
   .controller('CreateController', function ($scope, $modal) {
@@ -33,136 +34,46 @@ angular.module('umxApp')
   })
 
 
-  .controller('ProductListController', function ($scope, $state, Product) {
-
-    //get all the products in the db
-    $scope.product = Product.query();
-
-    $scope.deleteProduct = function (product) {
-      product.$delete();
-    };
+  .controller('ProductListController', function ($scope, productResource) {
+       $scope.products = productResource.query();
   })
-
-  .controller('ProductViewController', function ($scope, Product, ProductService) {
-    //Get a single product from the list
-    $scope.id = null;
-    $scope.getProduct = function () {
-      ProductService.get({id: $scope.id});
-    };
-  })
-
-  .controller('ProductCreateController', function ($scope, Product, ProductService) {
-    $scope.product = new Product();
-
-    $scope.addProduct = function () {
-      ProductService.save({id: $scope.id});
-    };
-  })
-
-  .controller('ProductEditController', function ($scope, Product, ProductService) {
-    $scope.updateProduct = function () {
-      $scope.product.$update();
-    };
-
-    //get a product to update
-    $scope.product = function () {
-      ProductService.get({id: $scope.id});
-    };
-    //load the product that was just updated
-    $scope.loadProduct();
-
+  .controller('ProductCreateController', function ($scope, productResource){
+      $scope.createProduct = function(){
+          productResource.save({id: $scope.id});
+      };
   });
 
-var items;
-items = [
-  {
-    name: 'Perspectives in Medical Sociology (2007, Paperback)',
-    price: 122.45,
-    seller: 'Mike Sellers',
-    condition: 'new',
-    description: 'item description',
-    images: [
-      {
-        full: '../assets/images/bradleys-book-outlet-books-only-logo.png',
-        thumb: 'images/bradleys-book-outlet-books-only-logo.png'
-      }
-    ],
-    available: true,
-    sold: false
-  },
-  {
-    name: 'Perspectives in Medical Sociology (2007, Paperback)',
-    price: 22.45,
-    seller: 'Mike Sellers',
-    condition: 'like new',
-    description: 'item description',
-    images: [
-      {
-        full: '../assets/images/bradleys-book-outlet-books-only-logo.png',
-        thumb: 'images/bradleys-book-outlet-books-only-logo.png'
-      }
-    ],
-    available: true,
-    sold: false
-  },
-  {
-    name: 'Perspectives in Medical Sociology (2007, Paperback)',
-    price: 122.45,
-    seller: 'Mike Sellers',
-    condition: 'used',
-    description: 'item description',
-    images: [
-      {
-        full: '../assets/images/bradleys-book-outlet-books-only-logo.png',
-        thumb: 'images/bradleys-book-outlet-books-only-logo.png'
-      }
-    ],
-    available: true,
-    sold: false
-  },
-  {
-    name: 'Perspectives in Medical Sociology (2007, Paperback)',
-    price: 19.99,
-    seller: 'Mike Sellers',
-    condition: 'new',
-    description: 'item description',
-    images: [
-      {
-        full: '../assets/images/bradleys-book-outlet-books-only-logo.png',
-        thumb: 'images/bradleys-book-outlet-books-only-logo.png'
-      }
-    ],
-    available: true,
-    sold: false
-  },
-  {
-    name: 'Perspectives in Medical Sociology (2007, Paperback)',
-    price: 12.45,
-    seller: 'Mike Sellers',
-    condition: 'new',
-    description: 'item description',
-    images: [
-      {
-        full: '../assets/images/bradleys-book-outlet-books-only-logo.png',
-        thumb: 'images/bradleys-book-outlet-books-only-logo.png'
-      }
-    ],
-    available: true,
-    sold: false
-  },
-  {
-    name: 'Perspectives in Medical Sociology (2007, Paperback)',
-    price: 332.45,
-    seller: 'Mike Sellers',
-    condition: 'new',
-    description: 'item description',
-    images: [
-      {
-        full: 'images/bradleys-book-outlet-books-only-logo.png',
-        thumb: 'images/bradleys-book-outlet-books-only-logo.png'
-      }
-    ],
-    available: true,
-    sold: false
-  }
-];
+/*
+      $scope.listProducts = function(){
+          $scope.products = $scope.productsResource.query();
+      };
+
+      $scope.deleteProduct = function(product){
+        product.$delete().then(function (){
+          $scope.products.splice($scope.products.indexOf(product), 1);
+        });
+      };
+
+      $scope.createProduct = function(product){
+        new $scope.productsResource(product).$save().then(function (newProduct){
+          $scope.products.push(newProduct);
+          $scope.editedProduct = null;
+        });
+      };
+
+      $scope.updateProduct = function(product){
+        product.$save();
+        $scope.editedProduct = null;
+      };
+
+      $scope.startEdit = function(product){
+        $scope.editedProduct = product;
+      };
+
+      $scope.cancelEdit = function(){
+        $scope.editedProduct = null;
+      };
+
+      $scope.listProducts();
+*/
+   // });
