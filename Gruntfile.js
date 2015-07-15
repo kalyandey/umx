@@ -8,7 +8,7 @@ module.exports = function (grunt) {
   } catch(e) {
     localConfig = {};
   }
-
+  //console.log('test aaaa');
   // Load grunt tasks automatically, when needed
   require('jit-grunt')(grunt, {
     express: 'grunt-express-server',
@@ -476,6 +476,11 @@ module.exports = function (grunt) {
         },
         files: {
           '.tmp/app/app.css' : '<%= yeoman.client %>/app/app.scss'
+        },
+        dist: {
+          files: {
+            '.tmp/app/app.css' : '<%= yeoman.client %>/app/app.scss'
+          }
         }
       }
     },

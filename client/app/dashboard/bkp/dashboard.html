@@ -8,32 +8,32 @@
     <div><span ng-click="toggleCategories()">Categories <span class="arrow-down"></span></span> </div>
     <div ng-class="categoriesActive ? 'in' : 'out'" class="categories-modal">
       <ul>
-        <li ng-repeat="category in category_list"><a href="#" ui-sref="product({slug:category.category_slug})">{{category.category_name}} </a><span></span></li>
-        <!--<li>School Supplies <span>254</span></li>
+        <li>Books <span>254</span></li>
+        <li>School Supplies <span>254</span></li>
         <li>Electronics <span>254</span></li>
         <li>Clothing <span>254</span></li>
         <li>Furniture <span>254</span></li>
         <li>Sports & Outdoor <span>254</span></li>
         <li>Automotive <span>254</span></li>
         <li>Beauty / Health & Fitness <span>254</span></li>
-        <li>Party Supplies & Crafts <span>254</span></li>-->
+        <li>Party Supplies & Crafts <span>254</span></li>
       </ul>
     </div>
-
-    
   </section>
   
   
   <section id="items" ng-controller="ProductListController">
   <div class="row">
     <div class="small-6 medium-3 large-2 columns" ng-repeat="item in products">
-      <a href="#"><img ng-src="{{item.product_image}}"/></a>
-      <a class="p-name" href="#">{{item.product_name}}</a>
+      <a href="#"><img ng-src="{{item.image}}"/></a>
+      <a class="p-name" href="#">{{item.name}}</a>
       <ul class="product-info">
+
         <li>Condition: {{item.condition}}</li>
-        <li>Category: {{item.category_name}}</li>
+        <li>Description: {{item.description}}</li>
+        <li>Category: {{item.category}}</li>
       </ul>
-      <span class="price">{{item.price}}</span>
+      <span class="price">{{item.price | currency}}</span>
     </div>
   </div>
 </section>

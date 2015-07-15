@@ -16,12 +16,11 @@
     "ejs": "~0.8.4",
     "composable-middleware": "^0.3.0",
     "connect-mongo": "^0.4.1",
-    "nodemailer": "^0.7.1",
-    "multer": "~0.1.6"
+    "nodemailer": "^0.7.1"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",
-    "grunt": "^0.4.5",
+    "grunt": "~0.4.4",
     "grunt-angular-templates": "^0.5.4",
     "grunt-asset-injector": "^0.1.0",
     "grunt-autoprefixer": "~0.7.2",
@@ -50,7 +49,6 @@
     "grunt-open": "~0.2.3",
     "grunt-protractor-runner": "^1.1.0",
     "grunt-rev": "~0.1.0",
-    "grunt-sass": "^1.0.0",
     "grunt-svgmin": "~0.4.0",
     "grunt-usemin": "~2.1.1",
     "grunt-wiredep": "~1.8.0",

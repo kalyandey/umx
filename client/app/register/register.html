@@ -1,0 +1,49 @@
+<div class="wrapper ">
+    <header class="landing" ng-include="'components/header/header.html'"></header>
+    <nav ng-class="mobileViewClass" class="landing animated" role="navigation" ng-include="'components/navbar/landing.html'"></nav>
+    <section ng-class="signInToggle" id="splash" class="container">
+        <div class="table-cell">
+            
+            <div class="row">
+
+                <div class="medium-5 large-4 end columns">                   
+                    <!--<form role="form" ng-submit="addStudent()" ng-controller="StudentCreateCtrl">-->
+                    
+                    <form name="frm_signup">
+                        <p>{{msg}}</p>
+                        <div class="form-group">
+                            <i class="icon-mail2"></i>
+                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" ng-model="name">
+                        </div>
+                        <div class="form-group">
+                            <i class="icon-mail2"></i>
+                            <input class="form-control" value={{email}} placeholder="Email" type="email" readonly="readonly">                           
+                        </div>
+                        
+                        <div class="form-group">
+                            <i class="icon-mail2"></i>
+                            <input class="form-control" id="password" name="password" placeholder="Password" type="password" data-ng-model="password">
+                        </div>
+                        
+                        <div class="form-group">
+                            <i class="icon-mail2"></i>
+                            <input class="form-control" id="school" name="school" placeholder="School" type="text" data-ng-model="school">
+                        </div>
+                        
+                        <!--<div class="form-group">
+                            <i class="icon-mail2"></i>
+                            <input class="form-control" id="date_of_join" name="date_of_join" placeholder="Date of Joined" type="text" data-ng-model="school">
+                        </div>-->
+                        
+                        <div class="form-group">
+                            <!--<input type="submit" name="signupSubmit"  data-ng-click="addStudent()" value="Submit">-->
+                            <button class="button" type="submit" data-ng-click="addStudent()">Sign Up</button>
+                        </div>
+                        <input type="hidden"  data-ng-model= "email_enc">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

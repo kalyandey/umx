@@ -2,23 +2,22 @@
     <i ng-click="closeSignIn()" class="icon-cross"></i>
     <ul ng-if="!isAuthenticated()">
         <li>
-            <form ng-controller="MainCtrl">
+            <form  data-ng-conroller = "loginCtrl">
                 <div class="row">
                     <h4 class="mobile-hide">Login to UMX</h4>
                     <a class="logo mobile-show" title="UMX - University Market Exchange" href="#"></a>
 
                     <div class="medium-5 columns">
                         <i class="icon-mail2"></i>
-                        <input type="email" placeholder="Email" class="form-control" id="login_email" name="login_email" data-ng-model="login_email" required="required">
+                        <input type="email" placeholder="Email" class="form-control" name = "login_email" ng-model="login_email">
                     </div>
                     <div class="medium-5 columns">
                         <i class="icon-lock"></i>
-                        <input type="password" placeholder="Password" class="form-control" data-ng-model="login_password" id="login_password" name="login_password" required="required">
+                        <input type="password" placeholder="Password" class="form-control" ng-model="login_password" name="login_password">
                         <a href="#" class="forgot mobile-hide">Forgot your Password?</a>
                     </div>
                     <div class="medium-2 columns">
-                        {{login_msg}}
-                        <input type="submit" data-ng-click="loginM()" value="Sign In" class="button-sec">
+                        <input type="button" data-ng-click="loginMethod()" value="Sign In" class="button-sec">
                         <a href="#" class="forgot mobile-show" aria-disabled="true">Forgot your Password?</a>
                     </div>
                 </div>

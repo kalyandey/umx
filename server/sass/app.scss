@@ -290,7 +290,7 @@ nav.landing {
 }
 
 #splash {
-  background: url("../assets/images/home.jpg") no-repeat center center;
+  background: url("../assets/images/home.jpg") no-repeat center center fixed;
   @include vendor-prefix(background-size, cover);
   height: calc(100% - 2.8125rem);
   h1 {
@@ -315,15 +315,14 @@ nav.landing {
       left: 1rem;
       top: .75rem;
     }
-    input[type=email], input[type=text], input[type=password] {
+    input[type=email] {
       background: rgba(255, 255, 255, .6);
       border-radius: .3rem;
+      font-size: 1.2rem;
+      padding: 1.4rem 1.4rem 1.4rem 3.2rem;
+      font-weight: 100;
       color: $umxLightOrange;
-      box-shadow: none;      
-      font-size: 1.3rem;
-      font-weight: 500;
-      height: 3rem;
-      padding: 0 1.4rem 0 3.2rem;
+      box-shadow: none;
 
       &::-webkit-input-placeholder {
         color: $umxLightOrange;
@@ -491,11 +490,10 @@ footer {
           }
         }
 
-        input[type=email], input[type=password], input[type=text] {
-          font-size: 1.3rem;
-          padding: 0 0 0 2.4rem;
+        input[type=email], input[type=password] {
+          font-size: 1.1rem;
+          padding: 1.6rem 0 1.6rem 2.4rem;
           margin-top: 5px;
-          height: 3rem;
           color: $umxGrey;
           border: 1px solid $umxGrey;
           border-radius: .3rem;
@@ -822,7 +820,6 @@ footer {
     width: 100%;
     position: relative;
     z-index: 2;
-    clear:both;
     @include simpleTransition(.3s all ease);
     &.expanded {
       @include simpleTransform(translateY(20.8rem));
@@ -853,18 +850,6 @@ footer {
   }
   footer {
     display: block;
-  }
-}
-
-.wrapper {
-  clear: both;
-  header.landing {
-    width: 100%;
-    clear: both;
-  }
-  section#splash {
-    clear: both;
-    width: 100%;
   }
 }
 

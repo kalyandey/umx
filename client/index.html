@@ -17,12 +17,14 @@
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
+    <!--<link rel="stylesheet" href="app/app.scss">-->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
-      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/main/main.css">
       <!-- endinjector -->
     <!-- endbuild -->
       <script src="//use.typekit.net/bvn2rhj.js"></script>
+      
       <script>
           try {
               Typekit.load();
@@ -57,6 +59,7 @@
     <![endif]-->
     <!-- build:js({client,node_modules}) app/vendor.js -->
       <!-- bower:js -->
+      
       <script src="bower_components/modernizr/modernizr.js"></script>
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
@@ -77,6 +80,9 @@
       <script src="bower_components/matchmedia-ng/matchmedia-ng.js"></script>
       <script src="bower_components/satellizer/satellizer.js"></script>
       <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+      <!-- shim is needed to support non-HTML5 FormData browsers (IE8-9)-->      
+      <script src="bower_components/ng-file-upload/ng-file-upload-shim.js"></script>
+      <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -84,8 +90,11 @@
         <script src="app/app.js"></script>
           <!-- injector:js -->
           <script src="app/dashboard/dashboard.controller.js"></script>
+          <!--<script src="app/dashboard/dashboard.controller_old.js"></script>-->
           <script src="app/dashboard/dashboard.js"></script>
           <script src="app/dashboard/dashboard.service.js"></script>
+          <script src="app/login/login.controller.js"></script>
+          <script src="app/login/login.service.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/modal/modal.controller.js"></script>
@@ -97,5 +106,7 @@
           <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+        
+        
 </body>
 </html>

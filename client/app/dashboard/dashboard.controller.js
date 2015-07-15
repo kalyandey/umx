@@ -1,79 +1,153 @@
 'use strict';
 
-angular.module('umxApp')
+var app = angular.module('umxApp');
 
-  .controller('DashboardCtrl', function ($scope) {
+//['ngFileUpload','ui.router']
+
+  app.controller('DashboardCtrl', function ($scope,$http) {
     
-  })
+   
+  });
 
-  .controller('CreateController', function ($scope, $modal) {
+  app.controller('CreateController', function ($scope, $modal) {
     $scope.openModal = function () {
       $modal.open({
         templateUrl: 'CreateModal.html',
         controller: 'ModalCtrl'
       });
-
+  
     };
-  })
-
-  .controller('ConditionController', function ($scope) {
+  });
+  
+  app.controller('ConditionController', function ($scope) {
     $scope.items = [
       'new',
       'Like new',
       'used',
       'free'
     ];
-  })
-
-  .controller('ItemController', function ($scope) {
+  });
+  
+  app.controller('ItemController', function ($scope,$http) {
+    
+      $scope.category_list = "";
+    
+        $http({
+	  url:"category_list",
+	  method:'post',
+	  headers   : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+	  data:'',
+	  }).success(function(res){
+                //console.log(res);
+		$scope.category_list = res;
+	  });
+    
     $scope.toggleCategories = function () {
       $scope.categoriesActive = ($scope.categoriesActive) ? false : true;
       return $scope.categoriesActive;
     };
-    this.products = items;
-  })
-
-
-  .controller('ProductListController', function ($scope, productResource) {
-       $scope.products = productResource.query();
-  })
-  .controller('ProductCreateController', function ($scope, productResource){
-      $scope.createProduct = function(){
-          productResource.save({id: $scope.id});
-      };
+    
+  });
+  
+  
+  app.controller('ProductListController', function ($scope, $http) {
+       
+       $http({
+	  url:"product_list",
+	  method:'post',
+	  headers   : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+	  data:'',
+	  }).success(function(res){
+                //console.log(res);
+		$scope.products = res;
+	  });
+       
+       
+  });
+  
+  app.controller('productCategoryCtrl', function ($scope, $http, $state) {
+       var slug = $state.params.slug;
+       console.log(slug);
+        
+         
+       $http({
+	  url:"product_list",
+	  method:'post',
+	  headers   : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+	  data:'slug='+slug,
+	  }).success(function(res){
+                //console.log(res);
+		$scope.products = res;
+	  });
+       
+       
   });
 
-/*
-      $scope.listProducts = function(){
-          $scope.products = $scope.productsResource.query();
-      };
+  
+  app.controller('ProductController',function ($scope,productResource,$http,Upload, $location, Global){
+    if (Global.log() == '') {
+      $location.path('/');    
+    }
+    $scope.msg = '';
+    $scope.productimg	= '';
+    $scope.$watch('files', function () {
+        $scope.onFileSelect($scope.files);
+    });
+    
+    
+    $scope.onFileSelect = function(files) {
+      if (files && files.length) {
+      $scope.productimg = files[0];
+      }
+    }
+  
+    $http({
+	  url:"category_list",
+	  method:'post',
+	  headers   : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+	  data:'',
+	  }).success(function(res){
+		$scope.category_list = res;
+	  });
+    
+    $scope.addProduct = function(){
+        if ($scope.productimg != '') {
+	  Upload.upload({
+		url: 'productimage',
+		fields: '',
+		headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+		file: $scope.productimg
+	    }).progress(function (evt) {
+		var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);		
+	    }).success(function (data, status, headers, config) {
+	              $http({
+			url:"addproduct",
+			method:'post',
+			headers   : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+			data:'name='+$scope.name+'&price='+$scope.price+'&category='+$scope.category+'&condition='+$scope.condition+'&description='+$scope.description+'&picture='+data,
+			}).success(function(res){
+			      $scope.msg = res;
+		      });
+	    }).error(function (data, status, headers, config) {
+		
+	    });
+	}else{
+	   $http({
+	      url:"addproduct",
+	      method:'post',
+	      headers   : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+	      data:'name='+$scope.name+'&price='+$scope.price+'&category='+$scope.category+'&condition='+$scope.condition+'&description='+$scope.description+'&picture=',
+	      }).success(function(res){
+		    $scope.msg = res;
+	    }); 
+	}
 
-      $scope.deleteProduct = function(product){
-        product.$delete().then(function (){
-          $scope.products.splice($scope.products.indexOf(product), 1);
-        });
-      };
+        
+        
+        
+      }
+    
+    });
+  
+  
 
-      $scope.createProduct = function(product){
-        new $scope.productsResource(product).$save().then(function (newProduct){
-          $scope.products.push(newProduct);
-          $scope.editedProduct = null;
-        });
-      };
-
-      $scope.updateProduct = function(product){
-        product.$save();
-        $scope.editedProduct = null;
-      };
-
-      $scope.startEdit = function(product){
-        $scope.editedProduct = product;
-      };
-
-      $scope.cancelEdit = function(){
-        $scope.editedProduct = null;
-      };
-
-      $scope.listProducts();
-*/
-   // });

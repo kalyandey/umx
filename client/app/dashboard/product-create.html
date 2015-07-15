@@ -1,14 +1,15 @@
 <header class="dashboard" ng-include="'components/header/header.html'"></header>
 
-<div ng-controller="ProductCreateController">
+<div ng-controller="ProductController">
 
 
     <div class="medium-8 columns">
       <h1>Create Product</h1>
+      <div>{{msg}}</div>
     </div>
 
-    <form name="create" ng-submit="createProduct()" novalidate>
-
+    <form name="create" novalidate>
+    
       <div class="row">
         <div class="small-8 columns">
           <div class="row">
@@ -16,7 +17,7 @@
               <label for="right-label" class="right inline">Name</label>
             </div>
           <div class="small-6 columns">
-            <input type="text" name="name" id="right-label" ng-model="name" placeholder="Enter Name" required />
+            <input type="text" name="name" id="right-label" data-ng-model="name" placeholder="Enter Name" required />
             <span class="error" ng-show="create.name.$error.required">
               Please enter a name
             </span>
@@ -28,7 +29,7 @@
               <label for="right-label" class="right inline">Price</label>
             </div>
           <div class="small-6 columns">
-            <input type="number" name="price" id="right-label" ng-model="price" placeholder="Enter Price" required />
+            <input type="number" name="price" id="right-label" data-ng-model="price" placeholder="Enter Price" required />
             <span class="error" ng-show="create.price.$error.required">
               Please enter a price
             </span>
@@ -40,7 +41,13 @@
               <label for="right-label" class="right inline">Category</label>
             </div>
           <div class="small-6 columns">
-            <input name="category" type="text" id="right-label" ng-model="category" placeholder="Enter Category" required/>
+            
+            <select data-ng-model="category" name="category" required>
+                <option value="">Select Category</option>
+                <option ng-repeat="category in category_list" value="{{category.category_id}}">{{category.category_name}}</option>
+                
+            </select>
+            
             <span class="error" ng-show="create.category.$error.required">
               Please enter a category
             </span>
@@ -52,7 +59,7 @@
               <label for="right-label" class="right inline">Condition</label>
             </div>
           <div class="small-6 columns">
-            <input name="condition" type="text" id="right-label" ng-model="condition" placeholder="Enter Condition" required/>
+            <input name="condition" type="text" id="right-label" data-ng-model="condition" placeholder="Enter Condition" required/>
             <span class="error" ng-show="create.condition.$error.required">
               Please enter a condition
             </span>
@@ -64,14 +71,26 @@
               <label for="right-label" class="right inline">Description</label>
             </div>
           <div class="small-6 columns">
-            <textarea name="description" id="right-label" ng-model="description" placeholder="Enter Description"></textarea>
+            <textarea name="description" id="right-label" data-ng-model="description" placeholder="Enter Description"></textarea>
         </div>
             <span class="error" ng-show="create.description.$error.required">
               Please enter a description
             </span>
       </div>
+      
+      
+      <div class="row">
+            <div class="small-6 columns">
+              <label for="right-label" class="right inline">Product Image</label>
+            </div>
+          <div class="small-6 columns">            
+            <div class="button" ngf-select ngf-change="onFileSelect($files)">Select File</div>
+            <!--<input type="file" name="logo" id="logo" file-model="logoFile" ng-file-select="onFileSelect($files)">-->
+        </div>
 
-      <input type="submit" class="button tiny right"></input>
+      </div>
+
+      <input type="submit" class="button tiny right" data-ng-click="addProduct($files)"></input>
     </div>
   </div>
 </form>
